@@ -1,0 +1,56 @@
+{
+  "profile": {
+    "name": "John Doe",
+    "description": "Passionate software developer with expertise in full-stack development and machine learning.",
+    "linkedin": "https://www.linkedin.com/in/johndoe",
+    "github": "https://github.com/johndoe",
+    "devpost": "https://devpost.com/johndoe",
+    "education": [
+      {
+        "schoolName": "University of Technology",
+        "major": "Computer Science",
+        "dates": "2015-2019"
+      }
+    ],
+    "projects": [
+      {
+        "title": "Smart Weather App",
+        "tags": ["JavaScript", "React", "API"],
+        "description": "A weather forecasting app providing real-time weather updates and alerts.",
+        "githubLink": "https://github.com/johndoe/smart-weather-app",
+        "demoLink": "https://smartweatherapp.com",
+        "videoLink": "https://youtube.com/demo/smartweatherapp"
+      },
+      {
+        "title": "AI Chatbot",
+        "tags": ["Python", "TensorFlow", "NLP"],
+        "description": "An AI-driven chatbot for automated customer service.",
+        "githubLink": "https://github.com/johndoe/ai-chatbot",
+        "demoLink": "https://aichatbot.com",
+        "videoLink": "https://youtube.com/demo/aichatbot"
+      }
+    ],
+    "skills": [
+      {
+        "category": "Programming Languages",
+        "skill": "Python",
+        "percentage": 90
+      },
+      {
+        "category": "Frameworks",
+        "skill": "React",
+        "percentage": 75
+      }
+    ],
+    "awards": [
+      {
+        "name": "Best Developer Award",
+        "date": "2020-11"
+      },
+      {
+        "name": "Innovative Solution Prize",
+        "date": "2019-09"
+      }
+    ]
+  }
+}
