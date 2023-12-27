@@ -6,7 +6,7 @@ import {createContext, useState, useMemo} from 'react'
 const ColorModeContext = createContext({toggleColorMode: () => {}})
 
 const CustomModeThemeProvider = ({children}) => {
-  const [mode, setMode] = useState('light')
+  const [mode, setMode] = useState('dark')
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
@@ -22,7 +22,7 @@ const CustomModeThemeProvider = ({children}) => {
         palette: {
           mode,
           primary: {
-            main: mode === 'light' ? '#7e57c2' : '#673ab7',
+            main: mode === 'light' ? '#7e57c2' : '#9D00FF',
           },
           secondary: {
             main: mode === 'light' ? '#b39ddb' : '#9575cd',
@@ -33,7 +33,7 @@ const CustomModeThemeProvider = ({children}) => {
           },
           text: {
             primary: mode === 'light' ? '#212121' : '#e0e0e0',
-            secondary: mode === 'light' ? '#757575' : '#bdbdbd',
+            secondary: mode === 'light' ? '#AA43F9' : '#AA43F9',
           },
         },
       }),
