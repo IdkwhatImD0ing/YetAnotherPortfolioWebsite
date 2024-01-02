@@ -5,12 +5,10 @@ const StyledTypography = ({children}) => {
     <Typography
       sx={{
         color: '#FFF',
-        fontFamily: 'Kanit',
         fontSize: '20px',
         fontStyle: 'normal',
         fontWeight: 600,
         textTransform: 'uppercase',
-        lineHeight: 'normal',
       }}
     >
       {children}

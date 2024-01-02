@@ -3,6 +3,9 @@
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import {createContext, useState, useMemo} from 'react'
 
+import {Kanit} from 'next/font/google'
+const kanit = Kanit({subsets: ['latin'], weight: ['400', '600']}) // Customize weights as needed
+
 const ColorModeContext = createContext({toggleColorMode: () => {}})
 
 const CustomModeThemeProvider = ({children}) => {
@@ -28,13 +31,18 @@ const CustomModeThemeProvider = ({children}) => {
             main: mode === 'light' ? '#b39ddb' : '#9575cd',
           },
           background: {
-            default: mode === 'light' ? '#fafafa' : '#303030',
-            paper: mode === 'light' ? '#ffffff' : '#424242',
+            default: mode === 'light' ? '#fafafa' : '#000000',
+            paper: mode === 'light' ? '#ffffff' : '#171717;',
           },
           text: {
             primary: mode === 'light' ? '#212121' : '#e0e0e0',
             secondary: mode === 'light' ? '#AA43F9' : '#AA43F9',
           },
+        },
+        typography: {
+          ...kanit.style,
+          fontStyle: 'normal',
+          lineHeight: 'normal',
         },
       }),
     [mode],

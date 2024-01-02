@@ -4,53 +4,204 @@
     "description": "Passionate software developer with expertise in full-stack development and machine learning.",
     "linkedin": "https://www.linkedin.com/in/johndoe",
     "github": "https://github.com/johndoe",
-    "devpost": "https://devpost.com/johndoe",
-    "education": [
-      {
-        "schoolName": "University of Technology",
-        "major": "Computer Science",
-        "dates": "2015-2019"
-      }
-    ],
-    "projects": [
-      {
-        "title": "Smart Weather App",
-        "tags": ["JavaScript", "React", "API"],
-        "description": "A weather forecasting app providing real-time weather updates and alerts.",
-        "githubLink": "https://github.com/johndoe/smart-weather-app",
-        "demoLink": "https://smartweatherapp.com",
-        "videoLink": "https://youtube.com/demo/smartweatherapp"
-      },
-      {
-        "title": "AI Chatbot",
-        "tags": ["Python", "TensorFlow", "NLP"],
-        "description": "An AI-driven chatbot for automated customer service.",
-        "githubLink": "https://github.com/johndoe/ai-chatbot",
-        "demoLink": "https://aichatbot.com",
-        "videoLink": "https://youtube.com/demo/aichatbot"
-      }
-    ],
-    "skills": [
-      {
-        "category": "Programming Languages",
-        "skill": "Python",
-        "percentage": 90
-      },
-      {
-        "category": "Frameworks",
-        "skill": "React",
-        "percentage": 75
-      }
-    ],
-    "awards": [
-      {
-        "name": "Best Developer Award",
-        "date": "2020-11"
-      },
-      {
-        "name": "Innovative Solution Prize",
-        "date": "2019-09"
-      }
-    ]
-  }
+    "devpost": "https://devpost.com/johndoe"
+  },
+  "education": [
+    {
+      "schoolName": "University of Technology",
+      "major": "Computer Science",
+      "dates": "2015-2019"
+    }
+  ],
+  "projects": [
+    {
+      "name": "SlugLoop",
+      "description": "SlugLoop is a real-time map app designed to help UC Santa Cruz students navigate campus with ease by providing up-to-date information on the location and routes of loop buses, reducing pressure on the metro buses during peak hours, and providing a seamless user experience. With a simple and attractive interface, SlugLoop offers an incredibly useful service to students that makes transportation around campus more efficient and less stressful.",
+      "code": "DlAGp-IjtJM",
+      "techStack": [
+        "React",
+        "ExpressJs",
+        "React Router",
+        "Material UI",
+        "Firebase",
+        "Raspberry PI",
+        "C"
+      ],
+      "link": "https://www.slugloop.tech/",
+      "github": "https://github.com/IdkwhatImD0ing/SlugLoop"
+    },
+    {
+      "name": "WebWeaver",
+      "description": "WebWeaver is an innovative AI-powered website generation tool that revolutionizes the process of designing and editing websites. Utilizing GPT-Vision, a state-of-the-art multimodal language model, the platform allows for the creation of website drafts based on user inputs, streamlining the design process. It features an advanced code editing interface for users with web development experience, coupled with a user-friendly dashboard for easy management of the entire website creation cycle.",
+      "code": "V977Ydky1DI",
+      "techStack": [
+        "NextJS",
+        "FastAPI",
+        "OpenAI",
+        "Axios",
+        "Clerk",
+        "Google Cloud",
+        "Redis"
+      ],
+      "link": "https://www.slugloop.tech/"
+    },
+    {
+      "name": "Memgen ",
+      "description": "Revolutionize your job search with Memgen, the intelligent web app that crafts tailored cover letters from your experience, in a snap! Summarize your projects, work history, and resume, and let our advanced vector database find the perfect match for any job description. Stand out from the crowd with personalized, data-driven cover letters that showcase your unique strengths.",
+      "code": "v5PAwb0BYtw",
+      "techStack": [
+        "NextJS",
+        "Express",
+        "TailwindCSS",
+        "Material UI",
+        "Axios",
+        "OpenAI",
+        "Auth0",
+        "Firebase",
+        "Milvus"
+      ],
+      "link": "https://memgen.art3m1s.me/",
+      "github": "https://github.com/IdkwhatImD0ing/MemGen"
+    },
+    {
+      "name": "Assistance ",
+      "description": "Assistance is an innovative application that enables users to interact with multiple large language models concurrently, such as Bing Chat, Google Bard, and ChatGPT3.5, offering a more comprehensive and accurate response to queries. The application is designed to allow users to maintain context, switch between models seamlessly, and ask questions to all models, leveraging their unique strengths and making the AI experience more efficient and valuable.",
+      "code": "DAuMnWCKtSk",
+      "techStack": [
+        "Gatsby",
+        "FastAPI",
+        "Material UI",
+        "OpenAI",
+        "Google Bard",
+        "Bing Chat"
+      ],
+      "link": "https://assistance.art3m1s.me/",
+      "github": "https://github.com/IdkwhatImD0ing/Assistance"
+    },
+    {
+      "name": "Paddy Plant Prognosis",
+      "description": "Our web app, Paddy Plant Prognosis, is a game changer for paddy cultivation. It utilizes cutting-edge computer vision technology to help farmers identify diseases in their crops quickly and accurately. With manual disease diagnosis often costly and time-consuming, our app offers a simple solution. By using our app, farmers can easily capture a picture of their plant and upload it to our system for instant analysis. The app then uses its advanced algorithms to identify any potential diseases, providing farmers with actionable information that they can use to protect their crops and avoid potential loss. With Paddy Plant Prognosis, farmers can catch diseases early, saving both time and money that would have been spent on costly treatments and labor. This app is a tool that can make a real difference in the livelihood of farmers, reducing crop loss and increasing yield.",
+      "code": "M_xLQeglzgU",
+      "techStack": ["Vite", "Flask", "Tensorflow", "TailwindCSS", "Keras"],
+      "link": "https://www.paddyplantprognosis.tech/",
+      "github": "https://github.com/IdkwhatImD0ing/PaddyPlantPrognosis"
+    },
+    {
+      "name": "Sink Or Swim",
+      "description": "Sink or Swim is a web application that uses machine learning to predict a user's chances of survival on the Titanic based on their personal information, and generates a personalized story about their experience on the ship, providing a unique and engaging glimpse into one of the most infamous shipwrecks in history. By combining cutting-edge technology with historical events, Sink or Swim offers a thought-provoking and immersive experience that brings the past to life.",
+      "code": "4V-2l-Zel5s",
+      "techStack": ["NextJs13", "Flask", "Tensorflow", "TailwindCSS", "Keras"],
+      "link": "https://sos.art3m1s.me/",
+      "github": "https://github.com/simon-quach/sink-or-swim"
+    },
+    {
+      "name": "Make Me Lunch",
+      "description": "MakeMeLunch is a web-based meal planning and grocery shopping tool that helps users organize and optimize their food-related tasks. The app allows users to create a list of ingredients and recipes, and then generates a shopping list based on the ingredients needed for the selected recipes. This helps users save time and money by avoiding unnecessary purchases and reducing food waste. In addition to generating shopping lists, MakeMeLunch can also take in an inventory of ingredients that the user already has on hand and generate a list of recipes that can be made with those ingredients. This feature is particularly useful for those who want to use up ingredients that they already have or who want to save money by using what they already have in their pantry. Overall, MakeMeLunch is an easy-to-use and convenient tool for anyone looking to streamline their meal planning and grocery shopping processes.",
+      "code": "SmRpW295Xkk",
+      "techStack": ["React", "Firebase", "RapidApi"],
+      "link": "https://makemelunch.xyz/",
+      "github": "https://github.com/IdkwhatImD0ing/MakeMeLunch"
+    },
+    {
+      "name": "Pool Party",
+      "description": "Pool Party is a web application that enables users to connect with others who are traveling to the same destination at the same time. It is designed primarily for mobile devices, but it is also compatible with desktop platforms. The app allows users to create a 'pool' of people who are planning to travel together, and then invite others to join the pool as either drivers or passengers. Drivers can view the list of passengers and select those whom they are willing to pick up, while passengers can see the list of available drivers and choose the one they want to ride with. This helps users coordinate their travel arrangements and share the costs of transportation, making it easier and more convenient to travel together. Pool Party is an useful tool for anyone looking to connect with others and save money on transportation.",
+      "code": "UEInrwiA_r8",
+      "techStack": ["React", "ExpressJs", "Hop.io"],
+      "link": "https://mypoolparty.tech/",
+      "github": "https://github.com/IdkwhatImD0ing/PoolParty"
+    },
+    {
+      "name": "Fiesta",
+      "description": "Fiesta is a web-based event planning app that simplifies the process of organizing and registering events. It was created to address the common challenges faced by event coordinators such as uncertainty of attendance and a lack of streamlined registration. The app allows users to easily plan and create events by setting the date, location, and other details. It also provides a simple registration process for attendees, giving event coordinators a clear understanding of attendance to plan events seamlessly and efficiently. The app also allows for easy communication and sharing of event details, including date and location, making the planning process convenient for everyone involved. With Fiesta, event coordinators can take control of the planning process and ensure a successful event.",
+      "code": "OjV4-Km9sWw",
+      "techStack": [
+        "React",
+        "ExpressJs",
+        "Hop.io",
+        "Firebase",
+        "Socker.io",
+        "Material UI"
+      ],
+      "link": "https://fiesta.art3m1s.me/",
+      "github": "https://github.com/cnRachel/civic-hacks"
+    },
+    {
+      "name": "Eat Safely",
+      "description": "Introducing EatSafely, a web app that uses machine learning to help you identify if your food is spoiled or not, thus reducing the risk of foodborne illness and wasting money. With a custom-trained model and an accuracy of 97%, simply upload a photo of the fruit in question, and EatSafely will give you a clear and accurate assessment of whether or not it is safe to eat. Say goodbye to spoiled fruits and hello to EatSafely.",
+      "code": "tr3ylJX1h30",
+      "techStack": ["React", "Flask", "Hop.io", "Socket.Io", "Tensorflow"],
+      "link": "hhttps://eatsafely.art3m1s.me/",
+      "github": "https://devpost.com/software/eatsafely"
+    },
+    {
+      "name": "Penmanship Pro",
+      "description": "A way to improve handwriting! This webapp is designed to help you improve your handwriting through a series of interactive exercises and challenges. Whether you're a student looking to ace your exams or an adult looking to tidy up your notes, Penmanship has something for everyone. Our ML model rates your writing, helping you to identify and correct any mistakes. With the app's timed exercise, you'll be able to track your progress and see how you stack up against other users. So why wait? Start improving your handwriting today and see the difference it can make!",
+      "code": "tf44b12LaDU",
+      "techStack": ["React", "Flask", "Hop.io", "Socket.Io", "Tensorflow"],
+      "link": "https://kazitasin07.wixsite.com/penmenshipro",
+      "github": "https://github.com/Renaud2002/PenmanshipPro-TLE"
+    },
+    {
+      "name": "Remote Trainer",
+      "description": "RemoteTrainer is a web-based fitness application designed to help users achieve their fitness goals. It allows users to search for and filter exercises based on the muscle groups they want to target and the equipment they have available. Once the user has submitted this information, the app generates a list of exercises that are suitable for their needs. Each exercise is accompanied by a GIF showing the proper form and technique, as well as additional details about the benefits and challenges of the exercise. In addition to providing a wide range of exercises, RemoteTrainer also helps users track their progress by keeping track of their body mass index (BMI) and body fat percentage. To do this, the app asks users to input their age, height, and weight, and uses this information to calculate their BMI and body fat. With its comprehensive search features and tracking capabilities, RemoteTrainer is a valuable tool for anyone looking to improve their fitness and achieve their goals.",
+      "code": "vL-X-1XrIN0",
+      "techStack": ["React", "Firebase", "RapidApi"],
+      "link": "https://remotetrainer.live/",
+      "github": "https://github.com/IdkwhatImD0ing/ExerciseTracker"
+    },
+    {
+      "name": "PrognoD",
+      "description": "Progno-D is a web-based artificial intelligence (AI) tool that helps users select the most appropriate medication for their illness. It provides recommendations for multiple drugs based on customer reviews and ratings from the past. The app uses a variety of features, such as ratings and reviews, to generate these recommendations. This helps users make informed decisions about which medication to use, based on the experiences of others. In addition to providing recommendations, Progno-D also allows users to learn more about each drug, including its common manufacturers and active ingredients. This information can help users understand the potential risks and benefits of each medication and make more informed choices. Overall, Progno-D is a valuable resource for anyone looking to find the right medication for their needs.",
+      "code": "eqZS5WqHXW4",
+      "techStack": ["React", "Flask", "RapidApi", "Hop.io", "NLTK"],
+      "link": "https://prognod.art3m1s.me/",
+      "github": "https://github.com/RupakKadhare15/Progno-D"
+    },
+    {
+      "name": "Tetris Coop",
+      "description": "Tetris Duels is a classic puzzle game that allows players to test their skills and strategy against others. In this game, players can choose to play solo or with family and friends in a competitive multiplayer mode. The goal is to score as many points as possible by strategically placing falling blocks called tetrominoes to form lines without any gaps. As the game progresses, the blocks fall faster and become more difficult to manage, requiring quick thinking and precise movements. With its simple gameplay and endless replay value, Tetris Duels is a fun and addictive game for players of all ages.",
+      "code": "y8wPmVJEqlc",
+      "techStack": ["React", "ExpressJs", "Hop.io"],
+      "link": "https://tetris.art3m1s.me/",
+      "github": "https://github.com/IdkwhatImD0ing/tetris-coop"
+    },
+    {
+      "name": "ASL-Transcription",
+      "description": "The lens is a useful tool that can be used to transcribe American Sign Language (ASL) in real time. It automatically converts the signed letters into text, allowing the user to easily create written content without the need to manually write captions for every action. In addition to its transcription capabilities, the lens can also be used as a learning tool for ASL. With real-time transcription, the user can practice their speed and accuracy in signing without the need for an interpreter. This can be especially beneficial for those who are learning ASL or for those who are seeking to improve their signing skills.",
+      "code": "Nat5vQGsyxA",
+      "techStack": ["Javascript", "Python", "Tensorflow", "Keras"],
+      "link": "https://lens.snapchat.com/16642dd15be74124ac470c53a82d46fc",
+      "github": "https://github.com/IdkwhatImD0ing/ASL-Transcription"
+    },
+    {
+      "name": "Exalt",
+      "description": "This project is a Java-based clone of the popular game Realm of the Mad God. In this game, players are placed in an arena and must face an endless series of waves. The objective is to collect potions to increase their stats and to defeat enemies and find loot. Players can also find and equip a variety of weapons and armor to further increase their chances of survival. ",
+      "code": "aaFkC9SpMhk",
+      "techStack": ["Java"],
+      "link": "https://github.com/IdkwhatImD0ing/BulletHellGame/releases/tag/v1.0.1",
+      "github": "https://github.com/IdkwhatImD0ing/BulletHellGame"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "skill": "Python",
+      "percentage": 90
+    },
+    {
+      "category": "Frameworks",
+      "skill": "React",
+      "percentage": 75
+    }
+  ],
+  "awards": [
+    {
+      "name": "Best Developer Award",
+      "date": "2020-11"
+    },
+    {
+      "name": "Innovative Solution Prize",
+      "date": "2019-09"
+    }
+  ]
 }
