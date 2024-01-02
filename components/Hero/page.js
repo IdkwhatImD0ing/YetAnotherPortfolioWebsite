@@ -13,7 +13,6 @@ export default function Hero() {
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
-      textAlign="center"
       position="relative"
       bgcolor="background.default"
     >

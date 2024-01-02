@@ -1,16 +1,29 @@
 {
   "profile": {
-    "name": "John Doe",
-    "description": "Passionate software developer with expertise in full-stack development and machine learning.",
-    "linkedin": "https://www.linkedin.com/in/johndoe",
-    "github": "https://github.com/johndoe",
-    "devpost": "https://devpost.com/johndoe"
+    "name": "Bill Zhang",
+    "description": "As an MSCS student at USC, I combine Machine Learning and Full-Stack Web Development, orchestrating a symphony of code. The Developer in me crafts robust applications with tools like React, Vue, and Flask, each project a reflection of my skills. My journey in Machine Learning matures with each Kaggle Competition and innovative project I undertake.",
+    "linkedin": "https://www.linkedin.com/in/bill-zhang1",
+    "github": "https://github.com/IdkwhatImD0ing/",
+    "devpost": "https://devpost.com/IdkwhatImD0ing/"
   },
   "education": [
     {
-      "schoolName": "University of Technology",
-      "major": "Computer Science",
-      "dates": "2015-2019"
+      "schoolName": "Lynbrook High School",
+      "major": "High School Diploma",
+      "dates": "2016-2020",
+      "logo": "/lynbrook.png"
+    },
+    {
+      "schoolName": "University of California, Santa Cruz",
+      "major": "Bachelor of Science in Computer Science",
+      "dates": "2020-2023",
+      "logo": "/ucsc.png"
+    },
+    {
+      "schoolName": "University of Southern California",
+      "major": "Master of Science in Computer Science - Artificial Intelligence",
+      "dates": "2023-2025",
+      "logo": "/usc.png"
     }
   ],
   "projects": [
@@ -182,18 +195,37 @@
       "github": "https://github.com/IdkwhatImD0ing/BulletHellGame"
     }
   ],
-  "skills": [
-    {
-      "category": "Programming Languages",
-      "skill": "Python",
-      "percentage": 90
-    },
-    {
-      "category": "Frameworks",
-      "skill": "React",
-      "percentage": 75
-    }
-  ],
+  "skills": {
+    "languages": [
+      ["JavaScript", "100%"],
+      ["Python", "95%"],
+      ["C/C++", "90%"],
+      ["Haskell", "80%"],
+      ["Java", "70%"],
+      ["Dart", "60%"]
+    ],
+    "frameworks": [
+      ["React", "100%"],
+      ["NextJs", "90%"],
+      ["Flask", "85%"],
+      ["Express.Js", "80%"],
+      ["Node.Js", "70%"]
+    ],
+    "databases": [
+      ["Firebase", "100%"],
+      ["Milvus", "80%"],
+      ["PostgreSQL", "70%"],
+      ["Pinecone", "20%"]
+    ],
+    "libraries": [
+      ["Libraries", "100%"],
+      ["Tensorflow", "90%"],
+      ["Keras", "80%"],
+      ["Pandas", "70%"],
+      ["NumPy", "70%"],
+      ["Matplotlib", "60%"]
+    ]
+  },
   "awards": [
     {
       "name": "Best Developer Award",

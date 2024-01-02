@@ -27,9 +27,9 @@ const Line = () => {
           position: 'absolute',
           left: '50%', // Center horizontally relative to the parent container
           transform: 'translateX(-50%)', // Offset the dot to the left by half its width to center it on the line
-          top: '5%', // Position the dot 10% from the top of the line
-          width: '12px', // Dot size
-          height: '12px', // Dot size
+          top: '14vh', // Position the dot 10% from the top of the line
+          width: '17px', // Dot size
+          height: '17px', // Dot size
           borderRadius: '50%', // Make it a circle
           bgcolor: 'primary.main', // Use the primary color from the theme
         }}
