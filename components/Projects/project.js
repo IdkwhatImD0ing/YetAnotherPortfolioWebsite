@@ -1,9 +1,10 @@
 'use client'
 
 import {Box, Stack, Button} from '@mui/material'
-import {useEffect, useRef} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import {DescriptionTypography, TitleTypography} from '../commons'
 import {useInView} from 'framer-motion'
+import {useRouter} from 'next/navigation'
 
 const Project = ({project}) => {
   return (
@@ -75,10 +76,17 @@ const Project = ({project}) => {
               </DescriptionTypography>
             </Button>
             <Button
-              variant="contained"
+              variant="outlined"
               sx={{
                 borderRadius: '137px',
                 textTransform: 'none',
+                color: 'white', // Set the text color to white
+                borderColor: 'white', // Set the border color to white
+                ':hover': {
+                  borderColor: '#f3f3f3', // Change to a slightly different shade for effect, adjust as needed
+                  background: 'rgba(255, 255, 255, 0.1)', // Slight white background on hover
+                  color: '#f3f3f3', // Change text color slightly for effect
+                },
               }}
             >
               <DescriptionTypography
@@ -100,6 +108,13 @@ const Project = ({project}) => {
 const VideoPlayer = ({videoId}) => {
   const ref = useRef(null)
   const isInView = useInView(ref)
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    if (isInView) {
+      setLoaded(true)
+    }
+  }, [isInView])
 
   return (
     <Box
@@ -110,7 +125,7 @@ const VideoPlayer = ({videoId}) => {
       justifyContent="center"
       ref={ref}
     >
-      {isInView ? (
+      {loaded ? (
         <iframe
           width="100%"
           height="100%"
