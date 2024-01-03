@@ -7,17 +7,20 @@ import Education from '@/components/Education/page'
 import Skills from '@/components/Skills/page'
 import Resume from '@/components/Resume/page'
 import Header from '@/components/header'
+import {AnimatePresence} from 'framer-motion'
 
 export default function Home() {
   return (
-    <CustomModeThemeProvider>
-      <Header position="top" />
-      <Hero />
-      <Projects />
-      <Education />
-      <Skills />
-      <Resume />
-      <Header position="bottom" />
-    </CustomModeThemeProvider>
+    <AnimatePresence>
+      <CustomModeThemeProvider>
+        <Header position="top" />
+        <Hero />
+        <Projects />
+        <Education />
+        <Skills />
+        {/* <Resume /> */}
+        <Header position="bottom" />
+      </CustomModeThemeProvider>
+    </AnimatePresence>
   )
 }

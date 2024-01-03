@@ -11,6 +11,7 @@ const Resume = () => {
       paddingX="5vw"
       position="relative"
       bgcolor="background.default"
+      id="resume-section"
     >
       <Line />
       <Stack

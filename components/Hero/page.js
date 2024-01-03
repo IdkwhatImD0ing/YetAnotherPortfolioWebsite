@@ -28,16 +28,17 @@ export default function Hero() {
         spacing={20}
       >
         <Stack direction="column" spacing={3}>
-          <Stack direction="row">
-            <TitleTypography>Hello There! I&apos;m&nbsp;</TitleTypography>
+          <TitleTypography>
+            Hello There! I&apos;m&nbsp;
             <TitleTypography
+              component="span"
               sx={{
                 color: 'text.secondary',
               }}
             >
               {UserProfile.profile.name}
             </TitleTypography>
-          </Stack>
+          </TitleTypography>
           <DescriptionTypography>
             {UserProfile.profile.description}
           </DescriptionTypography>

@@ -4,7 +4,6 @@ import {Box, Stack, Button} from '@mui/material'
 import {useState, useEffect, useRef} from 'react'
 import {DescriptionTypography, TitleTypography} from '../commons'
 import {useInView} from 'framer-motion'
-import {useRouter} from 'next/navigation'
 
 const Project = ({project}) => {
   return (
@@ -60,43 +59,50 @@ const Project = ({project}) => {
             <DescriptionTypography>{project.description}</DescriptionTypography>
           </Stack>
           <Stack direction="row" spacing={2} marginTop={2}>
-            <Button
-              variant="contained"
-              sx={{
-                borderRadius: '137px',
-                textTransform: 'none',
-              }}
-            >
-              <DescriptionTypography
+            {project.link && (
+              <Button
+                variant="contained"
                 sx={{
-                  fontSize: '20px',
+                  borderRadius: '137px',
+                  textTransform: 'none',
                 }}
               >
-                Demo
-              </DescriptionTypography>
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                borderRadius: '137px',
-                textTransform: 'none',
-                color: 'white', // Set the text color to white
-                borderColor: 'white', // Set the border color to white
-                ':hover': {
-                  borderColor: '#f3f3f3', // Change to a slightly different shade for effect, adjust as needed
-                  background: 'rgba(255, 255, 255, 0.1)', // Slight white background on hover
-                  color: '#f3f3f3', // Change text color slightly for effect
-                },
-              }}
-            >
-              <DescriptionTypography
+                <DescriptionTypography
+                  sx={{
+                    fontSize: '20px',
+                  }}
+                  onClick={() => window.open(project.link, '_blank')}
+                >
+                  Demo
+                </DescriptionTypography>
+              </Button>
+            )}
+
+            {project.github && (
+              <Button
+                variant="outlined"
                 sx={{
-                  fontSize: '20px',
+                  borderRadius: '137px',
+                  textTransform: 'none',
+                  color: 'white', // Set the text color to white
+                  borderColor: 'white', // Set the border color to white
+                  ':hover': {
+                    borderColor: '#f3f3f3', // Change to a slightly different shade for effect, adjust as needed
+                    background: 'rgba(255, 255, 255, 0.1)', // Slight white background on hover
+                    color: '#f3f3f3', // Change text color slightly for effect
+                  },
                 }}
               >
-                Github
-              </DescriptionTypography>
-            </Button>
+                <DescriptionTypography
+                  sx={{
+                    fontSize: '20px',
+                  }}
+                  onClick={() => window.open(project.github, '_blank')}
+                >
+                  Github
+                </DescriptionTypography>
+              </Button>
+            )}
           </Stack>
         </Stack>
         <VideoPlayer videoId={project.code} />

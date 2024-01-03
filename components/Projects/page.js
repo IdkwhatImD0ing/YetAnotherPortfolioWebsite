@@ -4,12 +4,25 @@ import Line from '../line'
 import UserProfile from '../profile'
 import Project from './project'
 import {useState} from 'react'
+import {motion} from 'framer-motion'
+
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId)
+  if (section) {
+    section.scrollIntoView({behavior: 'smooth', block: 'start'})
+  }
+}
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false)
 
   const toggleShowAll = () => {
-    setShowAll(!showAll) // Toggle between showing all and showing limited
+    setShowAll((prev) => {
+      if (prev) {
+        scrollToSection('projects-section')
+      }
+      return !prev
+    }) // Toggle between showing all and showing limited
   }
 
   return (
@@ -20,6 +33,7 @@ const Projects = () => {
       paddingX="5vw"
       position="relative"
       bgcolor="background.default"
+      id="projects-section"
     >
       <Line />
       <Stack
@@ -39,7 +53,15 @@ const Projects = () => {
         {UserProfile.projects
           .slice(0, showAll ? undefined : 3)
           .map((project, index) => (
-            <Project key={index} project={project} />
+            <motion.div
+              key={project.code} // Ensure a unique and consistent key for each project
+              initial={{opacity: 0, height: 0}}
+              animate={{opacity: 1, height: 'auto'}}
+              exit={{opacity: 0, height: 0}}
+              transition={{duration: 0.5}} // Adjust timing as needed
+            >
+              <Project key={index} project={project} />
+            </motion.div>
           ))}
         <Box width="100%" display="flex" justifyContent="center" mt={2}>
           <Button

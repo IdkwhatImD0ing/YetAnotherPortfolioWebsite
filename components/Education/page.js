@@ -1,4 +1,4 @@
-import {Box, Stack, Button} from '@mui/material'
+import {Box, Stack} from '@mui/material'
 import {TitleTypography, DescriptionTypography} from '../commons'
 import Line from '../line'
 import UserProfile from '../profile'
@@ -14,6 +14,7 @@ const Education = () => {
       paddingX="5vw"
       position="relative"
       bgcolor="background.default"
+      id="education-section"
     >
       <Line />
 

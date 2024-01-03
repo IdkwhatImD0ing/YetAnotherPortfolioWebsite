@@ -8,11 +8,11 @@ const Skills = () => {
   return (
     <Box
       width="100%"
-      minHeight="100vh"
       paddingY="10vh"
       paddingX="5vw"
       position="relative"
       bgcolor="background.default"
+      id="skills-section"
     >
       <Line />
       <Stack
