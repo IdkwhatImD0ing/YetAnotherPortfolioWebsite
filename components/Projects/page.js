@@ -30,7 +30,7 @@ const Projects = () => {
         spacing={3}
       >
         <TitleTypography>Personal Projects</TitleTypography>
-        <DescriptionTypography>
+        <DescriptionTypography maxWidth="650px">
           Below you&apos;ll find a selection of my best work that reflects my
           skills and experience in Software Engineering. Each project was
           completed with great attention to detail and using modern

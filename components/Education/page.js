@@ -9,7 +9,7 @@ const Education = () => {
   return (
     <Box
       width="100%"
-      minHeight="100vh"
+      height="100vh"
       paddingY="10vh"
       paddingX="5vw"
       position="relative"

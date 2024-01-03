@@ -218,7 +218,7 @@
       ["Pinecone", "20%"]
     ],
     "libraries": [
-      ["Libraries", "100%"],
+      ["Material UI", "100%"],
       ["Tensorflow", "90%"],
       ["Keras", "80%"],
       ["Pandas", "70%"],
