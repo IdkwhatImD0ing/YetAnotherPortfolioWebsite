@@ -1,10 +1,13 @@
-import {Avatar, Box, Button, Stack, Typography} from '@mui/material'
+import {Avatar, Box, Button, Stack} from '@mui/material'
 import {TitleTypography, DescriptionTypography} from '../commons'
-import LinkIcons from './icons'
-import NavigationTabs from './navigation'
+import {useState} from 'react'
 import UserProfile from '../profile'
 import Line from './line'
+import Contact from './contact'
 export default function Hero() {
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
   return (
     <Box
       height="100vh"
@@ -16,13 +19,13 @@ export default function Hero() {
       position="relative"
       bgcolor="background.default"
     >
-      <LinkIcons />
-      <NavigationTabs />
+      <Contact open={open} handleClose={handleClose} />
       <Stack
         direction="row"
         width="80%"
         justifyContent="space-between"
         alignItems="center"
+        spacing={20}
       >
         <Stack direction="column" spacing={3}>
           <Stack direction="row">
@@ -40,6 +43,7 @@ export default function Hero() {
           </DescriptionTypography>
           <Button
             variant="contained"
+            onClick={handleOpen} // Opens the modal when clicked
             sx={{
               width: '100px',
               borderRadius: '72px',
@@ -50,9 +54,11 @@ export default function Hero() {
           </Button>
         </Stack>
         <Avatar
+          alt="profile"
+          src={'/profile.jpg'}
           sx={{
-            width: '200px',
-            height: '200px',
+            width: '300px',
+            height: '300px',
           }}
         />
       </Stack>

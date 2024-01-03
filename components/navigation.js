@@ -18,7 +18,7 @@ const StyledTypography = ({children}) => {
 
 const NavigationTabs = () => {
   return (
-    <Stack direction="row" spacing={2} position="absolute" top="5%" right="5%">
+    <Stack direction="row" spacing={2} position="absolute" right="5%">
       <StyledTypography>Projects</StyledTypography>
       <StyledTypography>/</StyledTypography>
       <StyledTypography>Education</StyledTypography>

@@ -1,6 +1,6 @@
 import {Box} from '@mui/material'
 
-const Line = () => {
+const Line = ({nodot}) => {
   return (
     <Box
       position="absolute"
@@ -22,18 +22,20 @@ const Line = () => {
         }}
       />
       {/* Dot on vertical line 10% from the top */}
-      <Box
-        sx={{
-          position: 'absolute',
-          left: '50%', // Center horizontally relative to the parent container
-          transform: 'translateX(-50%)', // Offset the dot to the left by half its width to center it on the line
-          top: '14vh', // Position the dot 10% from the top of the line
-          width: '17px', // Dot size
-          height: '17px', // Dot size
-          borderRadius: '50%', // Make it a circle
-          bgcolor: 'primary.main', // Use the primary color from the theme
-        }}
-      />
+      {!nodot && (
+        <Box
+          sx={{
+            position: 'absolute',
+            left: '50%', // Center horizontally relative to the parent container
+            transform: 'translateX(-50%)', // Offset the dot to the left by half its width to center it on the line
+            top: '10%', // Position the dot 10% from the top of the line
+            width: '17px', // Dot size
+            height: '17px', // Dot size
+            borderRadius: '50%', // Make it a circle
+            bgcolor: 'primary.main', // Use the primary color from the theme
+          }}
+        />
+      )}
     </Box>
   )
 }

@@ -12,11 +12,12 @@ const CustomModeThemeProvider = ({children}) => {
   const [mode, setMode] = useState('dark')
   const colorMode = useMemo(
     () => ({
+      theme: mode,
       toggleColorMode: () => {
         setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
       },
     }),
-    [],
+    [mode],
   )
 
   const theme = useMemo(
@@ -33,6 +34,7 @@ const CustomModeThemeProvider = ({children}) => {
           background: {
             default: mode === 'light' ? '#fafafa' : '#000000',
             paper: mode === 'light' ? '#ffffff' : '#171717;',
+            form: mode === 'light' ? '#ffffff' : '#606060;',
           },
           text: {
             primary: mode === 'light' ? '#212121' : '#e0e0e0',
