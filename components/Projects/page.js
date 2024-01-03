@@ -30,7 +30,7 @@ const Projects = () => {
       width="100%"
       minHeight="100vh"
       paddingY="10vh"
-      paddingX="5vw"
+      paddingX="10vw"
       position="relative"
       bgcolor="background.default"
       id="projects-section"

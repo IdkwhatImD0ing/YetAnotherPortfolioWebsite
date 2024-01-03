@@ -1,14 +1,14 @@
 import {Box, Stack} from '@mui/material'
 import Line from '../line'
 import Display from './display'
-import {TitleTypography, DescriptionTypography} from '../commons'
+import {TitleTypography} from '../commons'
 
 const Resume = () => {
   return (
     <Box
       width="100%"
       paddingTop="10vh"
-      paddingX="5vw"
+      paddingX="10vw"
       position="relative"
       bgcolor="background.default"
       id="resume-section"

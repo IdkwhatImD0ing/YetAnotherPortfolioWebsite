@@ -1,15 +1,16 @@
-import {Box, Stack, Button} from '@mui/material'
+import {Box, Stack, useMediaQuery} from '@mui/material'
 import {TitleTypography, DescriptionTypography} from '../commons'
 import Line from '../line'
 import UserProfile from '../profile'
 import SkillCategory from './category'
 
 const Skills = () => {
+  const isMobile = useMediaQuery('(max-width: 600px)')
   return (
     <Box
       width="100%"
       paddingY="10vh"
-      paddingX="5vw"
+      paddingX="10vw"
       position="relative"
       bgcolor="background.default"
       id="skills-section"
@@ -27,7 +28,7 @@ const Skills = () => {
           Throughout my career, I have gained significant experience and skills
           in various areas of this field.
         </DescriptionTypography>
-        <Stack width="100%" spacing={2} direction="row">
+        <Stack width="100%" spacing={2} direction={isMobile ? 'column' : 'row'}>
           {Object.keys(UserProfile.skills).map((category, index) => (
             <SkillCategory
               key={index}

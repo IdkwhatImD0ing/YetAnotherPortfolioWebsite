@@ -1,11 +1,12 @@
 'use client'
 
-import {Box, Stack, Button} from '@mui/material'
+import {Box, Stack, Button, useMediaQuery} from '@mui/material'
 import {useState, useEffect, useRef} from 'react'
 import {DescriptionTypography, TitleTypography} from '../commons'
 import {useInView} from 'framer-motion'
 
 const Project = ({project}) => {
+  const isMobile = useMediaQuery('(max-width: 600px)')
   return (
     <Box
       display="flex"
@@ -18,9 +19,14 @@ const Project = ({project}) => {
     >
       {/*Flex Grow is needed here because setting height 
       to 100% doesn't work if parent doesnt have a set height*/}
-      <Stack direction="row" width="100%" flexGrow={1} spacing={2}>
+      <Stack
+        direction={isMobile ? 'column' : 'row'}
+        width="100%"
+        flexGrow={1}
+        spacing={2}
+      >
         <Stack
-          width="50%"
+          width={isMobile ? '100%' : '50%'}
           direction="column"
           justifyContent="space-between"
           alignItems="flex-start"
@@ -105,13 +111,13 @@ const Project = ({project}) => {
             )}
           </Stack>
         </Stack>
-        <VideoPlayer videoId={project.code} />
+        <VideoPlayer videoId={project.code} isMobile={isMobile} />
       </Stack>
     </Box>
   )
 }
 
-const VideoPlayer = ({videoId}) => {
+const VideoPlayer = ({videoId, isMobile}) => {
   const ref = useRef(null)
   const isInView = useInView(ref)
   const [loaded, setLoaded] = useState(false)
@@ -124,7 +130,7 @@ const VideoPlayer = ({videoId}) => {
 
   return (
     <Box
-      width="50%"
+      width={isMobile ? '100%' : '50%'}
       flexGrow={1}
       display="flex"
       alignItems="center"

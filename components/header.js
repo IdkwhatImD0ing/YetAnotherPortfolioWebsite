@@ -1,15 +1,16 @@
-import {Stack} from '@mui/material'
+import {Stack, useMediaQuery} from '@mui/material'
 import LinkIcons from './icons'
 import NavigationTabs from './navigation'
 import Line from './line'
 
 const Header = ({position}) => {
+  const isMobile = useMediaQuery('(max-width: 600px)')
   return (
     <Stack
       direction="row"
       alignItems="center"
       justifyContent="space-between"
-      height="100px"
+      height={isMobile ? '10vh' : '100px'}
       bgcolor="background.default"
       position={position === 'top' ? 'absolute' : 'relative'}
       top={position === 'top' ? 0 : 'auto'}

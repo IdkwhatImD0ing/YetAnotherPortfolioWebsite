@@ -46,9 +46,7 @@ const Display = () => {
       </Box>
       <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
         <Viewer
-          defaultScale={1}
-          theme="dark"
-          scrollMode="page"
+          theme={theme}
           fileUrl="/resume.pdf"
           plugins={[toolbarPluginInstance]}
         />

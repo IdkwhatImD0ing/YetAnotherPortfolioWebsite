@@ -6,7 +6,7 @@ const Line = () => {
       position="absolute"
       width="1%"
       height="40vh" // Adjust to the height of the line
-      left="3%" // Left position on the screen
+      left="5%" // Left position on the screen
       bottom={0} // Align to the bottom of the parent component
     >
       {/* Vertical Line */}

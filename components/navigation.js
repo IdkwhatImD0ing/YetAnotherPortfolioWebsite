@@ -4,7 +4,6 @@ import {
   Drawer,
   IconButton,
   Box,
-  useTheme,
   useMediaQuery,
 } from '@mui/material'
 import {useState, memo} from 'react'
@@ -37,8 +36,7 @@ const scrollToSection = (sectionId) => {
 
 const NavigationTabs = () => {
   const [drawerOpen, setDrawerOpen] = useState(false) // State to control Drawer open/close
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+  const isMobile = useMediaQuery('(max-width: 600px)')
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen)
@@ -72,7 +70,7 @@ const NavigationTabs = () => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{position: 'absolute', right: '5%', color: '#FFF'}}
+            sx={{position: 'absolute', right: '10%', color: '#FFF'}}
           >
             <MenuIcon />
           </IconButton>
@@ -88,7 +86,7 @@ const NavigationTabs = () => {
           </Drawer>
         </>
       ) : (
-        <Stack direction="row" spacing={2} position="absolute" right="5%">
+        <Stack direction="row" spacing={2} position="absolute" right="10%">
           <NavigationContent />
         </Stack>
       )}

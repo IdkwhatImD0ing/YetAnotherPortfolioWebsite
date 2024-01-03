@@ -9,7 +9,7 @@ const IconSize = 24
 
 const LinkIcons = () => {
   return (
-    <Stack direction="row" spacing={2} position="absolute" left="5%">
+    <Stack direction="row" spacing={2} position="absolute" left="10%">
       <a
         href={UserProfile.profile.devpost}
         target="_blank"

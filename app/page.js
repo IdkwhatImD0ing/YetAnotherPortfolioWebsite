@@ -18,7 +18,7 @@ export default function Home() {
         <Projects />
         <Education />
         <Skills />
-        {/* <Resume /> */}
+        <Resume />
         <Header position="bottom" />
       </CustomModeThemeProvider>
     </AnimatePresence>

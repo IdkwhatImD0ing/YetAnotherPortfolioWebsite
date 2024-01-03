@@ -1,4 +1,4 @@
-import {Avatar, Box, Button, Stack} from '@mui/material'
+import {Avatar, Box, Button, Stack, useMediaQuery} from '@mui/material'
 import {TitleTypography, DescriptionTypography} from '../commons'
 import {useState} from 'react'
 import UserProfile from '../profile'
@@ -8,10 +8,13 @@ export default function Hero() {
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
+  const isMobile = useMediaQuery('(max-width: 600px)')
   return (
     <Box
-      height="100vh"
+      minHeight="100vh"
       width="100%"
+      paddingY="10vh"
+      paddingX="10vw"
       display="flex"
       flexDirection="column"
       alignItems="center"
@@ -21,13 +24,13 @@ export default function Hero() {
     >
       <Contact open={open} handleClose={handleClose} />
       <Stack
-        direction="row"
-        width="80%"
+        direction={isMobile ? 'column' : 'row'}
+        width="100%"
         justifyContent="space-between"
         alignItems="center"
-        spacing={20}
+        spacing={isMobile ? 2 : 10}
       >
-        <Stack direction="column" spacing={3}>
+        <Stack direction="column" spacing={2}>
           <TitleTypography>
             Hello There! I&apos;m&nbsp;
             <TitleTypography
@@ -58,8 +61,8 @@ export default function Hero() {
           alt="profile"
           src={'/profile.jpg'}
           sx={{
-            width: '300px',
-            height: '300px',
+            width: isMobile ? '250px' : '300px',
+            height: isMobile ? '250px' : '300px',
           }}
         />
       </Stack>
