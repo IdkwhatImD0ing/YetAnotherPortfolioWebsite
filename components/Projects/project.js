@@ -2,7 +2,7 @@
 
 import {Box, Stack, Button, useMediaQuery} from '@mui/material'
 import {useState, useEffect, useRef} from 'react'
-import {DescriptionTypography, TitleTypography} from '../commons'
+import {DescriptionTypography, TitleTypography} from '../commons/commons'
 import {useInView} from 'framer-motion'
 
 const Project = ({project}) => {

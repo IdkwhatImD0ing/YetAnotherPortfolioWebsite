@@ -1,6 +1,7 @@
-import {Box} from '@mui/material'
+import {Box, useMediaQuery} from '@mui/material'
 
 const Line = ({nodot}) => {
+  const isMobile = useMediaQuery('(max-width: 600px)')
   return (
     <Box
       position="absolute"
@@ -28,7 +29,7 @@ const Line = ({nodot}) => {
             position: 'absolute',
             left: '50%', // Center horizontally relative to the parent container
             transform: 'translateX(-50%)', // Offset the dot to the left by half its width to center it on the line
-            top: '10%', // Position the dot 10% from the top of the line
+            top: `calc(10vh + 16px)`, // Position the dot 10% from the top of the line
             width: '17px', // Dot size
             height: '17px', // Dot size
             borderRadius: '50%', // Make it a circle

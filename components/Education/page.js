@@ -1,6 +1,6 @@
 import {Box, Stack, useMediaQuery} from '@mui/material'
-import {TitleTypography, DescriptionTypography} from '../commons'
-import Line from '../line'
+import {TitleTypography, DescriptionTypography} from '../commons/commons'
+import Line from '../commons/line'
 import UserProfile from '../profile'
 import Timeline from './timeline'
 import School from './school'
@@ -43,11 +43,13 @@ const Education = () => {
           alignItems="center"
           spacing={3}
           sx={
-            !isMobile && {
-              position: 'absolute',
-              top: '30%',
-              left: '0%',
-            }
+            !isMobile
+              ? {
+                  position: 'absolute',
+                  top: '30%',
+                  left: '0%',
+                }
+              : {}
           }
         >
           {UserProfile.education.map((school, index) => (

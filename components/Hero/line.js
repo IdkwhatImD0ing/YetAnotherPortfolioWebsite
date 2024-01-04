@@ -1,11 +1,12 @@
-import {Box, Typography} from '@mui/material'
+import {Box, Typography, useMediaQuery} from '@mui/material'
 
 const Line = () => {
+  const isMobile = useMediaQuery('(max-width: 600px)')
   return (
     <Box
       position="absolute"
       width="1%"
-      height="40vh" // Adjust to the height of the line
+      height={isMobile ? '20vh' : '30vh'} // Adjust to the height of the line
       left="5%" // Left position on the screen
       bottom={0} // Align to the bottom of the parent component
     >

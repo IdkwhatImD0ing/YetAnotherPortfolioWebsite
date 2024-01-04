@@ -5,11 +5,17 @@ import LinkedInIcon from '@/public/linkedin.svg'
 import {Stack} from '@mui/material'
 import Image from 'next/image'
 
-const IconSize = 24
+const IconSize = 25
 
 const LinkIcons = () => {
   return (
-    <Stack direction="row" spacing={2} position="absolute" left="10%">
+    <Stack
+      direction="row"
+      spacing={2}
+      position="absolute"
+      left="10%"
+      zIndex={2}
+    >
       <a
         href={UserProfile.profile.devpost}
         target="_blank"

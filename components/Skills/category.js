@@ -1,5 +1,5 @@
 import {Box, LinearProgress, Stack, useTheme} from '@mui/material'
-import {DescriptionTypography, TitleTypography} from '../commons'
+import {DescriptionTypography, TitleTypography} from '../commons/commons'
 
 const SkillCategory = ({category, skills}) => {
   return (

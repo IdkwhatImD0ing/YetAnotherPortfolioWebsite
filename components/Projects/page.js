@@ -1,6 +1,6 @@
 import {Box, Stack, Button} from '@mui/material'
-import {TitleTypography, DescriptionTypography} from '../commons'
-import Line from '../line'
+import {TitleTypography, DescriptionTypography} from '../commons/commons'
+import Line from '../commons/line'
 import UserProfile from '../profile'
 import Project from './project'
 import {useState} from 'react'

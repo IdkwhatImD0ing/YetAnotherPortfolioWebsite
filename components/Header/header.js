@@ -1,10 +1,11 @@
 import {Stack, useMediaQuery} from '@mui/material'
 import LinkIcons from './icons'
-import NavigationTabs from './navigation'
-import Line from './line'
+import Navigation from './navigation'
+import Line from '../commons/line'
 
 const Header = ({position}) => {
   const isMobile = useMediaQuery('(max-width: 600px)')
+
   return (
     <Stack
       direction="row"
@@ -18,12 +19,11 @@ const Header = ({position}) => {
         left: 0, // Stretch across by setting left and right to 0
         right: 0,
         width: '100%',
-        zIndex: 1,
       }}
     >
       {position === 'bottom' && <Line nodot />}
       <LinkIcons />
-      <NavigationTabs />
+      <Navigation />
     </Stack>
   )
 }

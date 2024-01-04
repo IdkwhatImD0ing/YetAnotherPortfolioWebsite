@@ -1,6 +1,6 @@
 import {Box, Stack, useMediaQuery} from '@mui/material'
-import {TitleTypography, DescriptionTypography} from '../commons'
-import Line from '../line'
+import {TitleTypography, DescriptionTypography} from '../commons/commons'
+import Line from '../commons/line'
 import UserProfile from '../profile'
 import SkillCategory from './category'
 

@@ -1,5 +1,5 @@
 import {Avatar, Box, Button, Stack, useMediaQuery} from '@mui/material'
-import {TitleTypography, DescriptionTypography} from '../commons'
+import {TitleTypography, DescriptionTypography} from '../commons/commons'
 import {useState} from 'react'
 import UserProfile from '../profile'
 import Line from './line'
@@ -61,8 +61,8 @@ export default function Hero() {
           alt="profile"
           src={'/profile.jpg'}
           sx={{
-            width: isMobile ? '250px' : '300px',
-            height: isMobile ? '250px' : '300px',
+            width: '300px',
+            height: '300px',
           }}
         />
       </Stack>

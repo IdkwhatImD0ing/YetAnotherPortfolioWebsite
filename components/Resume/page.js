@@ -1,7 +1,7 @@
 import {Box, Stack} from '@mui/material'
-import Line from '../line'
+import Line from '../commons/line'
 import Display from './display'
-import {TitleTypography} from '../commons'
+import {TitleTypography} from '../commons/commons'
 
 const Resume = () => {
   return (

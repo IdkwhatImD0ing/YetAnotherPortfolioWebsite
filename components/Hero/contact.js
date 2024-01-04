@@ -1,5 +1,5 @@
 import {Avatar, Box, Button, Stack, Modal, TextField} from '@mui/material'
-import {TitleTypography, DescriptionTypography} from '../commons'
+import {TitleTypography, DescriptionTypography} from '../commons/commons'
 
 const Contact = ({open, handleClose}) => {
   return (

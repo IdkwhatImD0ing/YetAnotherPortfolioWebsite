@@ -1,6 +1,6 @@
 import {Box, Stack, useMediaQuery} from '@mui/material'
 import Image from 'next/image'
-import {DescriptionTypography, TitleTypography} from '../commons'
+import {DescriptionTypography, TitleTypography} from '../commons/commons'
 
 const School = ({school}) => {
   const isMobile = useMediaQuery('(max-width: 600px)')
@@ -40,6 +40,7 @@ const School = ({school}) => {
         justifyContent="center"
         alignItems="center"
         spacing={1}
+        mt="10%"
       >
         <Box height="150px" width="150px" position="relative">
           <Image

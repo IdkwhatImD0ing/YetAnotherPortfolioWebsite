@@ -6,8 +6,8 @@ const TitleTypography = ({children, sx, ...props}) => {
     <Typography
       sx={{
         color: 'text.primary', // Override any other styles as needed
-        fontSize: isMobile ? '35px' : '45px',
-        lineHeight: isMobile ? '38px' : '48px',
+        fontSize: '45px',
+        lineHeight: '48px',
         fontWeight: 600,
         ...sx,
       }}
@@ -24,7 +24,7 @@ const DescriptionTypography = ({children, sx, ...props}) => {
     <Typography
       sx={{
         color: 'text.primary', // Override any other styles as needed
-        fontSize: isMobile ? '14px' : '16px',
+        fontSize: '16px',
         fontWeight: 400,
         lineHeight: '159.5%',
         ...sx,
