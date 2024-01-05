@@ -4,20 +4,6 @@ import AnimatedLinearProgress from './linearProgress'
 
 import {motion, useAnimation} from 'framer-motion'
 import {useEffect} from 'react'
-const MotionStack = motion(Stack)
-
-const skillVariants = {
-  hidden: {opacity: 0, y: 20},
-  visible: (index) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeOut',
-      delay: 0.5 + index * 0.2,
-    },
-  }),
-}
 
 const Skill = ({name, percentage, index, inView}) => {
   const value = parseInt(percentage)
@@ -73,6 +59,20 @@ const Skill = ({name, percentage, index, inView}) => {
       </Box>
     </MotionStack>
   )
+}
+
+const MotionStack = motion(Stack)
+const skillVariants = {
+  hidden: {opacity: 0, y: 20},
+  visible: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
+      delay: 0.5 + index * 0.2,
+    },
+  }),
 }
 
 export default Skill

@@ -1,21 +1,19 @@
-import {Stack, Typography, IconButton, useMediaQuery} from '@mui/material'
+import {Stack} from '@mui/material'
 import {memo} from 'react'
+import {TitleTypography} from '../commons/commons'
 
 const StyledTypography = ({children, onClick}) => {
   return (
-    <Typography
+    <TitleTypography
       sx={{
-        color: '#FFF',
         fontSize: '20px',
-        fontStyle: 'normal',
-        fontWeight: 600,
         textTransform: 'uppercase',
         cursor: onClick ? 'pointer' : 'default',
       }}
       onClick={onClick}
     >
       {children}
-    </Typography>
+    </TitleTypography>
   )
 }
 

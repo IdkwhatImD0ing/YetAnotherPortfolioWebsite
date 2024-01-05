@@ -6,10 +6,10 @@ import {useEffect} from 'react'
 import {useAnimation, motion} from 'framer-motion'
 import {textVariants} from '../commons/variants'
 
-const Navigation = ({inView}) => {
+const Navigation = ({inView, direction}) => {
   const isMobile = useMediaQuery('(max-width: 600px)')
   const theme = useTheme()
-  const {menuOpen, toggleMenu} = useMenu()
+  const {menuOpen, toggleMenu, setDirection} = useMenu()
 
   const controls = useAnimation()
 
@@ -24,7 +24,13 @@ const Navigation = ({inView}) => {
   return (
     <>
       {isMobile ? (
-        <Box position="absolute" right="10%" zIndex={2}>
+        <Box
+          position="absolute"
+          right="10%"
+          sx={{
+            zIndex: (theme) => theme.zIndex.drawer + 1,
+          }}
+        >
           <motion.div
             initial="hidden"
             animate={controls}
@@ -33,13 +39,24 @@ const Navigation = ({inView}) => {
             <Hamburger
               size={25}
               toggled={menuOpen}
-              toggle={toggleMenu}
+              toggle={() => {
+                toggleMenu()
+                setDirection(direction)
+              }}
               color={theme.palette.text.primary}
             />
           </motion.div>
         </Box>
       ) : (
-        <Stack direction="row" spacing={2} position="absolute" right="10%">
+        <Stack
+          direction="row"
+          spacing={2}
+          position="absolute"
+          right="10%"
+          sx={{
+            zIndex: (theme) => theme.zIndex.drawer + 1,
+          }}
+        >
           <motion.div
             initial="hidden"
             animate={controls}

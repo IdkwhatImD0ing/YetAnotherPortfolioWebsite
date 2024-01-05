@@ -1,7 +1,7 @@
 'use client'
 
 import {Box, Stack, Button, useMediaQuery} from '@mui/material'
-import {useState, useEffect, useRef} from 'react'
+import { useEffect, useRef} from 'react'
 import {DescriptionTypography, TitleTypography} from '../commons/commons'
 import {motion, useAnimation, useInView} from 'framer-motion'
 
@@ -144,24 +144,18 @@ const Project = ({project}) => {
 const VideoPlayer = ({videoId, isMobile}) => {
   const ref = useRef(null)
   const isInView = useInView(ref)
-  const [loaded, setLoaded] = useState(false)
-
-  useEffect(() => {
-    if (isInView) {
-      setLoaded(true)
-    }
-  }, [isInView])
-
   return (
     <Box
       width={isMobile ? '100%' : '50%'}
+      height={isMobile ? '200px' : 'auto'}
       flexGrow={1}
       display="flex"
       alignItems="center"
       justifyContent="center"
       ref={ref}
+      zIndex={5}
     >
-      {loaded ? (
+      {isInView ? (
         <iframe
           width="100%"
           height="100%"
