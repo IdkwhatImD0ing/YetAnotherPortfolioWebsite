@@ -4,17 +4,34 @@ import GithubIcon from '@/public/github.svg'
 import LinkedInIcon from '@/public/linkedin.svg'
 import {Stack} from '@mui/material'
 import Image from 'next/image'
+import {useEffect} from 'react'
+import {useAnimation, motion} from 'framer-motion'
+import {textVariants} from '../commons/variants'
 
 const IconSize = 25
+const MotionStack = motion(Stack)
 
-const LinkIcons = () => {
+const LinkIcons = ({inView}) => {
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    } else {
+      controls.start('hidden')
+    }
+  }, [controls, inView])
+
   return (
-    <Stack
+    <MotionStack
       direction="row"
       spacing={2}
       position="absolute"
       left="10%"
       zIndex={2}
+      initial="hidden"
+      animate={controls}
+      variants={textVariants}
     >
       <a
         href={UserProfile.profile.devpost}
@@ -52,7 +69,7 @@ const LinkIcons = () => {
           width={IconSize}
         />
       </a>
-    </Stack>
+    </MotionStack>
   )
 }
 

@@ -3,12 +3,32 @@
 import {Box, Stack, Button, useMediaQuery} from '@mui/material'
 import {useState, useEffect, useRef} from 'react'
 import {DescriptionTypography, TitleTypography} from '../commons/commons'
-import {useInView} from 'framer-motion'
+import {motion, useAnimation, useInView} from 'framer-motion'
+
+const projectVariants = {
+  hidden: {y: 30, opacity: 0},
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {duration: 0.5, ease: 'easeOut'},
+  },
+}
+
+const MotionBox = motion(Box)
 
 const Project = ({project}) => {
   const isMobile = useMediaQuery('(max-width: 600px)')
+  const controls = useAnimation()
+  const ref = useRef(null)
+  const inView = useInView(ref)
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
   return (
-    <Box
+    <MotionBox
       display="flex"
       flexDirection="column"
       minHeight="400px"
@@ -16,6 +36,10 @@ const Project = ({project}) => {
       paddingY="5%"
       paddingX="5%"
       bgcolor="background.paper"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={projectVariants}
     >
       {/*Flex Grow is needed here because setting height 
       to 100% doesn't work if parent doesnt have a set height*/}
@@ -113,7 +137,7 @@ const Project = ({project}) => {
         </Stack>
         <VideoPlayer videoId={project.code} isMobile={isMobile} />
       </Stack>
-    </Box>
+    </MotionBox>
   )
 }
 

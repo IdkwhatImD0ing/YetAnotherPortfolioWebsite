@@ -1,7 +1,6 @@
-import {Box, useMediaQuery} from '@mui/material'
+import {Box} from '@mui/material'
 
 const Line = ({nodot}) => {
-  const isMobile = useMediaQuery('(max-width: 600px)')
   return (
     <Box
       position="absolute"

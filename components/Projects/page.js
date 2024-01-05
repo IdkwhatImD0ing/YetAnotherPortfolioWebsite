@@ -1,10 +1,11 @@
 import {Box, Stack, Button} from '@mui/material'
 import {TitleTypography, DescriptionTypography} from '../commons/commons'
 import Line from '../commons/line'
+import {useState, useRef, useEffect} from 'react'
+import {motion, useAnimation, useInView} from 'framer-motion'
 import UserProfile from '../profile'
 import Project from './project'
-import {useState} from 'react'
-import {motion} from 'framer-motion'
+import {slideFromLeftVariants} from '@/components/commons/variants'
 
 const scrollToSection = (sectionId) => {
   const section = document.getElementById(sectionId)
@@ -15,6 +16,9 @@ const scrollToSection = (sectionId) => {
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false)
+  const controls = useAnimation() // Animation controls
+  const ref = useRef(null) // Reference to the component
+  const inView = useInView(ref) // Tracks whether component is in viewport
 
   const toggleShowAll = () => {
     setShowAll((prev) => {
@@ -25,6 +29,12 @@ const Projects = () => {
     }) // Toggle between showing all and showing limited
   }
 
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
+
   return (
     <Box
       width="100%"
@@ -34,6 +44,7 @@ const Projects = () => {
       position="relative"
       bgcolor="background.default"
       id="projects-section"
+      ref={ref}
     >
       <Line />
       <Stack
@@ -43,8 +54,22 @@ const Projects = () => {
         alignItems="flex-start"
         spacing={3}
       >
-        <TitleTypography>Personal Projects</TitleTypography>
-        <DescriptionTypography maxWidth="650px">
+        <TitleTypography
+          component={motion.span}
+          initial="hidden"
+          animate={controls}
+          variants={slideFromLeftVariants}
+        >
+          Personal Projects
+        </TitleTypography>
+        <DescriptionTypography
+          maxWidth="650px"
+          component={motion.div}
+          initial="hidden"
+          animate={controls}
+          variants={slideFromLeftVariants}
+          transition={{delay: 0.2}}
+        >
           Below you&apos;ll find a selection of my best work that reflects my
           skills and experience in Software Engineering. Each project was
           completed with great attention to detail and using modern

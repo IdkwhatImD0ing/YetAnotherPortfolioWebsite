@@ -4,8 +4,24 @@ import Line from '../commons/line'
 import UserProfile from '../profile'
 import SkillCategory from './category'
 
+import {useRef, useEffect} from 'react'
+import {motion, useAnimation, useInView} from 'framer-motion'
+import {
+  slideFromLeftVariants,
+  textVariants,
+} from '@/components/commons/variants'
+
 const Skills = () => {
   const isMobile = useMediaQuery('(max-width: 600px)')
+  const controls = useAnimation() // Animation controls
+  const ref = useRef(null) // Reference to the component
+  const inView = useInView(ref) // Tracks whether component is in viewport
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
   return (
     <Box
       width="100%"
@@ -14,6 +30,7 @@ const Skills = () => {
       position="relative"
       bgcolor="background.default"
       id="skills-section"
+      ref={ref}
     >
       <Line />
       <Stack
@@ -23,8 +40,22 @@ const Skills = () => {
         alignItems="flex-start"
         spacing={4}
       >
-        <TitleTypography>Skills</TitleTypography>
-        <DescriptionTypography maxWidth="650px">
+        <TitleTypography
+          component={motion.div}
+          initial="hidden"
+          animate={controls}
+          variants={slideFromLeftVariants}
+        >
+          Skills
+        </TitleTypography>
+        <DescriptionTypography
+          maxWidth="650px"
+          component={motion.div}
+          initial="hidden"
+          animate={controls}
+          variants={textVariants}
+          transition={{delay: 0.2}}
+        >
           Throughout my career, I have gained significant experience and skills
           in various areas of this field.
         </DescriptionTypography>

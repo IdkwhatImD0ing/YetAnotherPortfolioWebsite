@@ -2,8 +2,20 @@ import {Box, Stack} from '@mui/material'
 import Line from '../commons/line'
 import Display from './display'
 import {TitleTypography} from '../commons/commons'
+import {useRef, useEffect} from 'react'
+import {motion, useAnimation, useInView} from 'framer-motion'
+import {slideFromLeftVariants} from '@/components/commons/variants'
 
 const Resume = () => {
+  const controls = useAnimation() // Animation controls
+  const ref = useRef(null) // Reference to the component
+  const inView = useInView(ref) // Tracks whether component is in viewport
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
   return (
     <Box
       width="100%"
@@ -12,6 +24,7 @@ const Resume = () => {
       position="relative"
       bgcolor="background.default"
       id="resume-section"
+      ref={ref}
     >
       <Line />
       <Stack
@@ -22,7 +35,14 @@ const Resume = () => {
         spacing={4}
         overflow={'hidden'}
       >
-        <TitleTypography>Resume</TitleTypography>
+        <TitleTypography
+          component={motion.div}
+          initial="hidden"
+          animate={controls}
+          variants={slideFromLeftVariants}
+        >
+          Resume
+        </TitleTypography>
         <Display />
       </Stack>
     </Box>
