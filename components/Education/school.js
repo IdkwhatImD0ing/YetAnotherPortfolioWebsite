@@ -1,44 +1,14 @@
+import React, {useRef, useEffect} from 'react'
 import {Box, Stack, useMediaQuery} from '@mui/material'
 import Image from 'next/image'
 import {DescriptionTypography, TitleTypography} from '../commons/commons'
 import {motion, useAnimation, useInView} from 'framer-motion'
-import {useRef, useEffect} from 'react'
-
-const MotionBox = motion(Box)
-const MotionStack = motion(Stack)
-
-// Adjust the dotVariants to include index-based delay
-const dotVariants = {
-  hidden: {scale: 0},
-  visible: (index) => ({
-    scale: 1,
-    transition: {
-      duration: 0.3,
-      ease: 'easeOut',
-      delay: 0.5 + index * 0.1, // Stagger based on index
-    },
-  }),
-}
-
-// Adjust the contentVariants to include index-based delay
-const contentVariants = {
-  hidden: {y: -50, opacity: 0},
-  visible: (index) => ({
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: 'easeOut',
-      delay: 1 + index * 0.1, // Additional delay so content comes after the dot
-    },
-  }),
-}
 
 const School = ({school, index}) => {
   const isMobile = useMediaQuery('(max-width: 600px)')
-  const controls = useAnimation() // Controls for animation
-  const ref = useRef(null) // Reference for the component
-  const inView = useInView(ref) // Checks if component is in view
+  const controls = useAnimation()
+  const ref = useRef(null)
+  const inView = useInView(ref)
 
   useEffect(() => {
     if (inView) {
@@ -57,7 +27,6 @@ const School = ({school, index}) => {
       alignItems="center"
       position="relative"
     >
-      {/* Dot centered on the horizontal line */}
       {!isMobile && (
         <MotionBox
           position="absolute"
@@ -67,9 +36,7 @@ const School = ({school, index}) => {
           height="17px"
           borderRadius="50%"
           bgcolor="text.primary"
-          sx={{
-            transform: 'translate(-50%)', // Offset the dot to the left by half its height and width to center it on the line
-          }}
+          sx={{transform: 'translate(-50%)'}}
           initial="hidden"
           animate={controls}
           variants={dotVariants}
@@ -78,18 +45,17 @@ const School = ({school, index}) => {
       )}
       {!isMobile && (
         <DescriptionTypography
-          component={motion.div}
+          component={MotionBox}
           initial="hidden"
           animate={controls}
           variants={contentVariants}
           transition={{delay: 0.2}}
           marginBottom="10%"
-          custom={index}
+          custom={{index, isMobile}}
         >
           Dates: {school.dates}
         </DescriptionTypography>
       )}
-
       <MotionStack
         direction="column"
         justifyContent="center"
@@ -99,8 +65,8 @@ const School = ({school, index}) => {
         initial="hidden"
         animate={controls}
         variants={contentVariants}
-        transition={{delay: 0.4}} // Additional delay for content
-        custom={index}
+        transition={{delay: 0.4}}
+        custom={{index, isMobile}}
       >
         <Box height="150px" width="150px" position="relative">
           <Image
@@ -108,9 +74,7 @@ const School = ({school, index}) => {
             fill
             sizes="100%"
             alt={`${school.schoolName} logo`}
-            style={{
-              objectFit: 'contain',
-            }}
+            style={{objectFit: 'contain'}}
           />
         </Box>
         <TitleTypography align="center">{school.schoolName}</TitleTypography>
@@ -125,6 +89,34 @@ const School = ({school, index}) => {
       </MotionStack>
     </Box>
   )
+}
+
+const MotionBox = motion(Box)
+const MotionStack = motion(Stack)
+
+const dotVariants = {
+  hidden: {scale: 0},
+  visible: (index) => ({
+    scale: 1,
+    transition: {
+      duration: 0.3,
+      ease: 'easeOut',
+      delay: 0.5 + index * 0.1,
+    },
+  }),
+}
+
+const contentVariants = {
+  hidden: {y: -50, opacity: 0},
+  visible: ({index, isMobile}) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
+      delay: isMobile ? 0.5 : 1 + index * 0.1,
+    },
+  }),
 }
 
 export default School

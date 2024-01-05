@@ -1,25 +1,48 @@
+import React, {useEffect, useRef} from 'react'
 import {Box, Stack, useMediaQuery} from '@mui/material'
+import {motion, useAnimation, useInView} from 'framer-motion'
+
 import {TitleTypography, DescriptionTypography} from '../commons/commons'
 import Line from '../commons/line'
 import UserProfile from '../profile'
 import Timeline from './timeline'
 import School from './school'
-import {slideFromLeftVariants} from '@/components/commons/variants'
 
-import {useRef, useEffect} from 'react'
-import {motion, useAnimation, useInView} from 'framer-motion'
+import {slideFromLeftVariants} from '@/components/commons/variants'
 
 const Education = () => {
   const isMobile = useMediaQuery('(max-width: 600px)')
-  const controls = useAnimation() // Animation controls
-  const ref = useRef(null) // Reference to the component
-  const inView = useInView(ref) // Tracks whether component is in viewport
+  const controls = useAnimation()
+  const ref = useRef(null)
+  const inView = useInView(ref)
 
   useEffect(() => {
     if (inView) {
       controls.start('visible')
     }
   }, [controls, inView])
+
+  // Modularized Education Descriptions
+  const EducationDescriptions = () => (
+    <Stack direction="column">
+      {[
+        'Masters of Science in Computer Science',
+        'Full Stack Web Development, Applied Machine Learning',
+      ].map((text, i) => (
+        <DescriptionTypography
+          key={i}
+          maxWidth="650px"
+          component={motion.div}
+          initial="hidden"
+          animate={controls}
+          variants={slideFromLeftVariants}
+          transition={{delay: 0.2}}
+        >
+          {text}
+        </DescriptionTypography>
+      ))}
+    </Stack>
+  )
 
   return (
     <Box
@@ -48,28 +71,7 @@ const Education = () => {
         >
           Education
         </TitleTypography>
-        <Stack direction="column">
-          <DescriptionTypography
-            maxWidth="650px"
-            component={motion.div}
-            initial="hidden"
-            animate={controls}
-            variants={slideFromLeftVariants}
-            transition={{delay: 0.2}}
-          >
-            Masters of Science in Computer Science
-          </DescriptionTypography>
-          <DescriptionTypography
-            maxWidth="650px"
-            component={motion.div}
-            initial="hidden"
-            animate={controls}
-            variants={slideFromLeftVariants}
-            transition={{delay: 0.2}}
-          >
-            Full Stack Web Development, Applied Machine Learning
-          </DescriptionTypography>
-        </Stack>
+        <EducationDescriptions />
         {!isMobile && <Timeline />}
         <Stack
           direction={isMobile ? 'column' : 'row'}
@@ -78,15 +80,7 @@ const Education = () => {
           justifyContent="center"
           alignItems="center"
           spacing={3}
-          sx={
-            !isMobile
-              ? {
-                  position: 'absolute',
-                  top: '30%',
-                  left: '0%',
-                }
-              : {}
-          }
+          sx={!isMobile ? {position: 'absolute', top: '30%', left: '0%'} : {}}
         >
           {UserProfile.education.map((school, index) => (
             <School key={index} school={school} index={index} />

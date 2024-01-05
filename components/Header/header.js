@@ -1,6 +1,6 @@
-import {Stack, useMediaQuery} from '@mui/material'
+import {Box, Stack, useMediaQuery} from '@mui/material'
 import {motion, useAnimation, useInView} from 'framer-motion'
-import {useRef, useEffect} from 'react'
+import {useRef, useEffect, useMemo} from 'react'
 import LinkIcons from './icons'
 import Navigation from './navigation'
 import Line from '../commons/line'
@@ -21,26 +21,30 @@ const Header = ({position}) => {
     }
   }, [controls, inView])
 
-  return (
-    <MotionStack
-      direction="row"
-      alignItems="center"
-      justifyContent="space-between"
-      height={isMobile ? '10vh' : '100px'}
-      bgcolor="background.default"
-      position={position === 'top' ? 'absolute' : 'relative'}
-      top={position === 'top' ? 0 : 'auto'}
-      sx={{
+  // Using useMemo to avoid unnecessary recalculations
+  const stackStyles = useMemo(
+    () => ({
+      direction: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      height: isMobile ? '10vh' : '100px',
+      bgcolor: 'background.default',
+      position: position === 'top' ? 'absolute' : 'relative',
+      top: position === 'top' ? 0 : 'auto',
+      sx: {
         left: 0,
         right: 0,
         width: '100%',
-        zIndex: 1,
-      }}
-      ref={ref}
-    >
+      },
+    }),
+    [position, isMobile],
+  ) // Dependencies
+
+  return (
+    <MotionStack {...stackStyles} ref={ref}>
       {position === 'bottom' && <Line nodot />}
       <LinkIcons inView={inView} />
-      <Navigation inView={inView} />
+      <Navigation inView={inView} direction={position} />
     </MotionStack>
   )
 }

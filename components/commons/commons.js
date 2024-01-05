@@ -1,7 +1,6 @@
-import {Typography, useMediaQuery} from '@mui/material'
+import {Typography} from '@mui/material'
 
 const TitleTypography = ({children, sx, ...props}) => {
-  const isMobile = useMediaQuery('(max-width: 600px)')
   return (
     <Typography
       sx={{
@@ -19,7 +18,6 @@ const TitleTypography = ({children, sx, ...props}) => {
 }
 
 const DescriptionTypography = ({children, sx, ...props}) => {
-  const isMobile = useMediaQuery('(max-width: 600px)')
   return (
     <Typography
       sx={{

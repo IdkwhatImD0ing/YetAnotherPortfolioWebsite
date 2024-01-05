@@ -1,88 +1,64 @@
-import {motion, useScroll} from 'framer-motion'
-import {Box, Stack, Typography} from '@mui/material'
-import {useEffect, useState, memo, useCallback} from 'react'
+import {motion} from 'framer-motion'
+import {Box, Stack, Drawer} from '@mui/material'
+import {useEffect, memo, useCallback, useMemo} from 'react'
 import {useMenu} from '../menuContext'
 import {AnimatePresence} from 'framer-motion'
+import {TitleTypography} from '../commons/commons'
 
-const MotionTypography = motion(Typography)
+const AnimatedTab = ({sectionId, onClick, index}) => {
+  const {direction} = useMenu()
 
-const AnimatedTab = ({bottom, sectionId, onClick, index}) => {
-  const reverseStaggerDelay = (4 - index - 1) * 0.1
-  return (
-    <MotionTypography
-      key={sectionId}
-      onClick={onClick}
-      initial={{
+  const motionVariants = useMemo(() => {
+    const reverseStaggerDelay = (4 - index - 1) * 0.05
+    return {
+      hidden: {
         opacity: 0,
         rotateY: -90, // Flip from the right
-      }}
-      animate={{
+      },
+      visible: {
         opacity: 1,
         rotateY: 0, // End facing the viewer
         transition: {
-          duration: 0.5,
-          delay: bottom ? reverseStaggerDelay : index * 0.1,
+          duration: 0.4,
+          delay: direction != 'top' ? reverseStaggerDelay : index * 0.05,
           ease: 'easeInOut',
         },
-      }}
-      exit={{
+      },
+      exit: {
         opacity: 0,
         rotateY: -90, // Flip to the right
         transition: {
-          duration: 0.5,
-          delay: bottom ? index * 0.1 : reverseStaggerDelay,
+          duration: 0.4,
+          delay: direction != 'top' ? index * 0.05 : reverseStaggerDelay,
           ease: 'easeInOut',
         },
-      }}
+      },
+    }
+  }, [direction, index])
+
+  return (
+    <TitleTypography
+      component={motion.div}
+      key={sectionId}
+      onClick={onClick}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      variants={motionVariants}
       sx={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'right',
-        color: '#FFF',
         fontSize: '40px',
-        fontStyle: 'normal',
-        fontWeight: 600,
         textTransform: 'uppercase',
-        cursor: 'pointer',
       }}
     >
       {sectionId.split('-')[0]}
-    </MotionTypography>
+    </TitleTypography>
   )
 }
 
-const MotionBox = motion(Box)
-
 const FullScreenMenu = () => {
-  const {menuOpen, toggleMenu} = useMenu()
-  const [currentScrollY, setCurrentScrollY] = useState(0) // This is the current scroll position when menu is opened
-  const {scrollY} = useScroll()
-
-  useEffect(() => {
-    const mainContent = document.getElementById('main-content')
-    let originalPosition = window.getComputedStyle(mainContent).position
-    let originalTop = mainContent.style.top
-
-    if (menuOpen) {
-      // Apply styles to freeze page
-      const scrollYValue = scrollY.get()
-      setCurrentScrollY(scrollYValue) // Store the current scroll position
-      mainContent.style.position = 'fixed'
-      mainContent.style.top = `-${scrollYValue}px` // Freeze the page at the current scroll position
-    } else {
-      // Remove styles and return to original scroll position
-      mainContent.style.position = originalPosition
-      mainContent.style.top = originalTop
-      // Ensure we're scrolling back to the exact position before menu was opened
-      window.scrollTo(0, currentScrollY)
-    }
-
-    return () => {
-      // Cleanup function to ensure styles are reset when the component unmounts or before next effect runs
-      mainContent.style.position = originalPosition
-      mainContent.style.top = originalTop
-    }
-    // DO NOT ADD CURRENTSCROLLY TO DEPENDENCIES
-  }, [menuOpen, scrollY])
+  const {menuOpen, toggleMenu, direction} = useMenu()
 
   const scrollToSection = useCallback(
     (sectionId) => {
@@ -100,7 +76,14 @@ const FullScreenMenu = () => {
     [toggleMenu],
   )
 
-  const shouldAnimateFromBottom = currentScrollY > 1000
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
   const Tabs = memo(() => (
     <Stack
       width="100%"
@@ -118,7 +101,6 @@ const FullScreenMenu = () => {
         'resume-section',
       ].map((sectionId, index) => (
         <AnimatedTab
-          bottom={shouldAnimateFromBottom}
           key={sectionId}
           sectionId={sectionId}
           onClick={() => scrollToSection(sectionId)}
@@ -130,30 +112,46 @@ const FullScreenMenu = () => {
   Tabs.displayName = 'Tabs'
 
   return (
-    <MotionBox
-      animate={{height: menuOpen ? '100vh' : 0}} // Animate to 100vh when open and back to 0 when closed
-      transition={{duration: 0.5, ease: 'easeInOut'}} // Adjust the duration and easing as needed
-      position="fixed"
-      top={shouldAnimateFromBottom ? 'auto' : 0}
-      bottom={shouldAnimateFromBottom ? 0 : 'auto'}
-      left={0}
-      width="100vw"
-      bgcolor="background.default"
-      overflow="hidden"
-      zIndex={1}
-      display="flex"
-      flexDirection="column"
-      justifyContent={shouldAnimateFromBottom ? 'flex-end' : 'flex-start'}
-      alignItems="flex-end"
-    >
+    <>
       <AnimatePresence>
         {menuOpen && (
-          <Box paddingY="12vh" paddingX="10vw">
+          <Box
+            height="76vh"
+            width="100vw"
+            top="12vh"
+            bottom="12vh"
+            paddingX="10vw"
+            overflow="hidden"
+            position="fixed"
+            display="flex"
+            flexDirection="column"
+            justifyContent={direction == 'top' ? 'flex-start' : 'flex-end'}
+            alignItems="flex-end"
+            sx={{
+              zIndex: (theme) => theme.zIndex.drawer + 1,
+            }}
+          >
             <Tabs />
           </Box>
         )}
       </AnimatePresence>
-    </MotionBox>
+      <Drawer
+        variant="persistent"
+        anchor={direction == 'top' ? 'top' : 'bottom'}
+        width="100vw"
+        height="100vh"
+        open={menuOpen}
+        onClose={() => toggleMenu(false)}
+        transitionDuration={500}
+      >
+        <Box
+          height="100vh"
+          width="100vw"
+          bgcolor="background.default"
+          overflow="hidden"
+        />
+      </Drawer>
+    </>
   )
 }
 

@@ -32,6 +32,9 @@ const LinkIcons = ({inView}) => {
       initial="hidden"
       animate={controls}
       variants={textVariants}
+      sx={{
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+      }}
     >
       <a
         href={UserProfile.profile.devpost}
