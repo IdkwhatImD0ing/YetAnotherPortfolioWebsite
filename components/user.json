@@ -59,6 +59,21 @@
       "link": "https://www.slugloop.tech/"
     },
     {
+      "name": "Paddy Plant Prognosis",
+      "description": "Paddy Plant Prognosis is a revolutionary web app transforming paddy cultivation. Leveraging advanced computer vision, it enables farmers to quickly identify crop diseases through a simple photo upload. Our app promptly analyzes the image, identifies potential diseases, and offers actionable insights. This tool significantly reduces diagnosis time, helps in early disease detection, and aids farmers in preventing crop loss, ultimately enhancing yield and saving resources.",
+      "code": "M_xLQeglzgU",
+      "techStack": ["Vite", "Flask", "Tensorflow", "TailwindCSS", "Keras"],
+      "link": "https://www.paddyplantprognosis.tech/",
+      "github": "https://github.com/IdkwhatImD0ing/PaddyPlantPrognosis"
+    },
+    {
+      "name": "Portfolio Website V1",
+      "description": "The first version of my porfolio website, like this one, written in NextJS and Material UI. It features react spring for animations unlike this one which uses Framer Motion.",
+      "techStack": ["NextJS", "Material UI", "React Spring"],
+      "link": "https://v1.billzhang.tech/",
+      "github": "https://github.com/IdkwhatImD0ing/PortfolioTemplate"
+    },
+    {
       "name": "Memgen ",
       "description": "Revolutionize your job search with Memgen, the intelligent web app that crafts tailored cover letters from your experience, in a snap! Summarize your projects, work history, and resume, and let our advanced vector database find the perfect match for any job description. Stand out from the crowd with personalized, data-driven cover letters that showcase your unique strengths.",
       "code": "v5PAwb0BYtw",
@@ -92,13 +107,14 @@
       "github": "https://github.com/IdkwhatImD0ing/Assistance"
     },
     {
-      "name": "Paddy Plant Prognosis",
-      "description": "Our web app, Paddy Plant Prognosis, is a game changer for paddy cultivation. It utilizes cutting-edge computer vision technology to help farmers identify diseases in their crops quickly and accurately. With manual disease diagnosis often costly and time-consuming, our app offers a simple solution. By using our app, farmers can easily capture a picture of their plant and upload it to our system for instant analysis. The app then uses its advanced algorithms to identify any potential diseases, providing farmers with actionable information that they can use to protect their crops and avoid potential loss. With Paddy Plant Prognosis, farmers can catch diseases early, saving both time and money that would have been spent on costly treatments and labor. This app is a tool that can make a real difference in the livelihood of farmers, reducing crop loss and increasing yield.",
-      "code": "M_xLQeglzgU",
-      "techStack": ["Vite", "Flask", "Tensorflow", "TailwindCSS", "Keras"],
-      "link": "https://www.paddyplantprognosis.tech/",
-      "github": "https://github.com/IdkwhatImD0ing/PaddyPlantPrognosis"
+      "name": "Make Me Lunch",
+      "description": "MakeMeLunch is an intuitive web-based tool designed for efficient meal planning and grocery shopping. It allows users to compile recipes, from which it generates a tailored shopping list to minimize unnecessary purchases and food waste. Additionally, users can input their current pantry inventory to receive recipe suggestions, optimizing the use of available ingredients. This feature is especially beneficial for cost-saving and reducing excess.",
+      "code": "SmRpW295Xkk",
+      "techStack": ["React", "Firebase", "RapidApi"],
+      "link": "https://makemelunch.xyz/",
+      "github": "https://github.com/IdkwhatImD0ing/MakeMeLunch"
     },
+
     {
       "name": "Sink Or Swim",
       "description": "Sink or Swim is a web application that uses machine learning to predict a user's chances of survival on the Titanic based on their personal information, and generates a personalized story about their experience on the ship, providing a unique and engaging glimpse into one of the most infamous shipwrecks in history. By combining cutting-edge technology with historical events, Sink or Swim offers a thought-provoking and immersive experience that brings the past to life.",
@@ -107,17 +123,10 @@
       "link": "https://sos.art3m1s.me/",
       "github": "https://github.com/simon-quach/sink-or-swim"
     },
-    {
-      "name": "Make Me Lunch",
-      "description": "MakeMeLunch is a web-based meal planning and grocery shopping tool that helps users organize and optimize their food-related tasks. The app allows users to create a list of ingredients and recipes, and then generates a shopping list based on the ingredients needed for the selected recipes. This helps users save time and money by avoiding unnecessary purchases and reducing food waste. In addition to generating shopping lists, MakeMeLunch can also take in an inventory of ingredients that the user already has on hand and generate a list of recipes that can be made with those ingredients. This feature is particularly useful for those who want to use up ingredients that they already have or who want to save money by using what they already have in their pantry. Overall, MakeMeLunch is an easy-to-use and convenient tool for anyone looking to streamline their meal planning and grocery shopping processes.",
-      "code": "SmRpW295Xkk",
-      "techStack": ["React", "Firebase", "RapidApi"],
-      "link": "https://makemelunch.xyz/",
-      "github": "https://github.com/IdkwhatImD0ing/MakeMeLunch"
-    },
+
     {
       "name": "Pool Party",
-      "description": "Pool Party is a web application that enables users to connect with others who are traveling to the same destination at the same time. It is designed primarily for mobile devices, but it is also compatible with desktop platforms. The app allows users to create a 'pool' of people who are planning to travel together, and then invite others to join the pool as either drivers or passengers. Drivers can view the list of passengers and select those whom they are willing to pick up, while passengers can see the list of available drivers and choose the one they want to ride with. This helps users coordinate their travel arrangements and share the costs of transportation, making it easier and more convenient to travel together. Pool Party is an useful tool for anyone looking to connect with others and save money on transportation.",
+      "description": "Pool Party is a versatile web application that simplifies group travel by connecting users with others headed to the same destination. Optimized for mobile and desktop use, it allows travelers to form or join 'pools' as drivers or passengers, facilitating easy coordination and shared travel costs. With Pool Party, arranging rideshares becomes straightforward, enabling users to select companions based on mutual travel plans, thereby enhancing the journey experience and offering a cost-effective way to travel.",
       "code": "UEInrwiA_r8",
       "techStack": ["React", "ExpressJs", "Hop.io"],
       "link": "https://mypoolparty.tech/",
@@ -125,7 +134,7 @@
     },
     {
       "name": "Fiesta",
-      "description": "Fiesta is a web-based event planning app that simplifies the process of organizing and registering events. It was created to address the common challenges faced by event coordinators such as uncertainty of attendance and a lack of streamlined registration. The app allows users to easily plan and create events by setting the date, location, and other details. It also provides a simple registration process for attendees, giving event coordinators a clear understanding of attendance to plan events seamlessly and efficiently. The app also allows for easy communication and sharing of event details, including date and location, making the planning process convenient for everyone involved. With Fiesta, event coordinators can take control of the planning process and ensure a successful event.",
+      "description": "Fiesta is a user-friendly web-based event planning app designed to streamline the organization and registration of events. It addresses common challenges by offering tools for setting dates, locations, and other details, coupled with a straightforward registration process for attendees. This feature aids coordinators in accurately gauging attendance, ensuring efficient planning. Additionally, Fiesta facilitates effortless communication and information sharing, making it a go-to solution for hassle-free event management and enhanced event success.",
       "code": "OjV4-Km9sWw",
       "techStack": [
         "React",
@@ -156,7 +165,7 @@
     },
     {
       "name": "Remote Trainer",
-      "description": "RemoteTrainer is a web-based fitness application designed to help users achieve their fitness goals. It allows users to search for and filter exercises based on the muscle groups they want to target and the equipment they have available. Once the user has submitted this information, the app generates a list of exercises that are suitable for their needs. Each exercise is accompanied by a GIF showing the proper form and technique, as well as additional details about the benefits and challenges of the exercise. In addition to providing a wide range of exercises, RemoteTrainer also helps users track their progress by keeping track of their body mass index (BMI) and body fat percentage. To do this, the app asks users to input their age, height, and weight, and uses this information to calculate their BMI and body fat. With its comprehensive search features and tracking capabilities, RemoteTrainer is a valuable tool for anyone looking to improve their fitness and achieve their goals.",
+      "description": "RemoteTrainer is a comprehensive web-based fitness app that personalizes exercise routines to user's specific needs. Users can filter exercises by target muscle groups and available equipment, receiving a curated list of suitable activities complete with instructional GIFs, benefits, and challenges. Additionally, RemoteTrainer offers progress tracking by calculating and monitoring body mass index (BMI) and body fat percentage based on user-provided data. It's an ideal solution for anyone aiming to enhance fitness efficiently and effectively.",
       "code": "vL-X-1XrIN0",
       "techStack": ["React", "Firebase", "RapidApi"],
       "link": "https://remotetrainer.live/",
@@ -164,7 +173,7 @@
     },
     {
       "name": "PrognoD",
-      "description": "Progno-D is a web-based artificial intelligence (AI) tool that helps users select the most appropriate medication for their illness. It provides recommendations for multiple drugs based on customer reviews and ratings from the past. The app uses a variety of features, such as ratings and reviews, to generate these recommendations. This helps users make informed decisions about which medication to use, based on the experiences of others. In addition to providing recommendations, Progno-D also allows users to learn more about each drug, including its common manufacturers and active ingredients. This information can help users understand the potential risks and benefits of each medication and make more informed choices. Overall, Progno-D is a valuable resource for anyone looking to find the right medication for their needs.",
+      "description": "Progno-D is an innovative web-based AI tool designed to assist users in selecting the most suitable medication for their illness. Leveraging customer reviews and ratings, it provides well-informed drug recommendations. Users gain access to a wealth of information including drug details, common manufacturers, and active ingredients, enabling them to understand the potential risks and benefits. Progno-D stands out as a valuable resource for informed medication choices, enhancing users' decision-making process regarding their health.",
       "code": "eqZS5WqHXW4",
       "techStack": ["React", "Flask", "RapidApi", "Hop.io", "NLTK"],
       "link": "https://prognod.art3m1s.me/",

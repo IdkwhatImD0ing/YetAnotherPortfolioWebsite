@@ -8,7 +8,7 @@ const AnimatedLinearProgress = ({targetValue, inView, index}) => {
   const staggerDelay = (0.2 * index + 0.5) * 1000
 
   useEffect(() => {
-    if (inView && progress == 0) {
+    if (inView) {
       const intervalDuration = 20 // Interval duration in ms
       const animationDuration = 2000 // Total animation duration in ms
       const totalSteps = animationDuration / intervalDuration
@@ -32,7 +32,8 @@ const AnimatedLinearProgress = ({targetValue, inView, index}) => {
         if ((t /= 0.5) < 1) return 0.5 * Math.pow(2, 10 * --t)
         return 0.5 * (-Math.pow(2, -10 * --t) + 2)
       }
-      const timeout = setTimeout(() => {
+
+      setTimeout(() => {
         const interval = setInterval(() => {
           const ratio = step / totalSteps
           const easedRatio = expoBlend(ratio)
@@ -54,6 +55,7 @@ const AnimatedLinearProgress = ({targetValue, inView, index}) => {
   return (
     <LinearProgress
       variant="determinate"
+      aria-label="skill-progress-bar"
       value={progress}
       sx={{
         height: '20px',

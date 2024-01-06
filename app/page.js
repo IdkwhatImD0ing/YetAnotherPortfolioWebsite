@@ -12,6 +12,7 @@ import FullScreenMenu from '@/components/Header/menu'
 import {useState, useEffect} from 'react'
 import {MenuProvider} from '@/components/menuContext'
 import {ClimbingBoxLoader} from 'react-spinners'
+import {motion} from 'framer-motion'
 
 export default function Home() {
   const isMobile = useMediaQuery('(max-width: 600px)', {
@@ -49,10 +50,15 @@ export default function Home() {
   )
 }
 
+const MotionBox = motion(Box)
 const Loader = () => {
   const theme = useTheme()
   return (
-    <Box
+    <MotionBox
+      initial={{opacity: 0}} // Initial state of the component
+      animate={{opacity: 1}} // Animate to this state
+      exit={{opacity: 0}} // Exit state (when component unmounts)
+      transition={{duration: 0.5}} // Duration of the exit animation
       minHeight="100vh"
       width="100%"
       paddingY="10vh"
@@ -65,6 +71,6 @@ const Loader = () => {
       bgcolor="background.default"
     >
       <ClimbingBoxLoader color={theme.palette.primary.main} size={30} />
-    </Box>
+    </MotionBox>
   )
 }

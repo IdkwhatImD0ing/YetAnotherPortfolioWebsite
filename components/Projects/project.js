@@ -1,7 +1,7 @@
 'use client'
 
 import {Box, Stack, Button, useMediaQuery} from '@mui/material'
-import { useEffect, useRef} from 'react'
+import {useEffect, useRef} from 'react'
 import {DescriptionTypography, TitleTypography} from '../commons/commons'
 import {motion, useAnimation, useInView} from 'framer-motion'
 
@@ -135,15 +135,26 @@ const Project = ({project}) => {
             )}
           </Stack>
         </Stack>
-        <VideoPlayer videoId={project.code} isMobile={isMobile} />
+
+        <VideoPlayer
+          videoId={project.code}
+          isMobile={isMobile}
+          demoUrl={project.link}
+        />
       </Stack>
     </MotionBox>
   )
 }
 
-const VideoPlayer = ({videoId, isMobile}) => {
+const VideoPlayer = ({videoId, isMobile, demoUrl}) => {
   const ref = useRef(null)
   const isInView = useInView(ref)
+
+  // Determine the source URL for the iframe
+  const iframeSrc = videoId
+    ? `https://www.youtube.com/embed/${videoId}`
+    : demoUrl // Use the demo URL if no videoId is provided
+
   return (
     <Box
       width={isMobile ? '100%' : '50%'}
@@ -159,9 +170,12 @@ const VideoPlayer = ({videoId, isMobile}) => {
         <iframe
           width="100%"
           height="100%"
-          src={`https://www.youtube.com/embed/${videoId}`}
+          src={iframeSrc}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
+          style={{
+            pointerEvents: videoId ? 'auto' : 'none', // Disable pointer events if no videoId is provided
+          }}
         ></iframe>
       ) : (
         <TitleTypography>Loading...</TitleTypography>
