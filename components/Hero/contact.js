@@ -194,6 +194,9 @@ const Contact = ({open, handleClose}) => {
           <Stack alignItems="center" spacing={2}>
             <CheckCircleIcon color="success" sx={{fontSize: 45}} />
             <TitleTypography align="center">{state.message}</TitleTypography>
+            <DescriptionTypography align="center">
+              Please check your email/spam folder for a confirmation email.
+            </DescriptionTypography>
           </Stack>
         )}
         {state.status === 'error' && (
