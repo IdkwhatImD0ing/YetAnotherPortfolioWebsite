@@ -3,7 +3,6 @@ import {DescriptionTypography, TitleTypography} from '../commons/commons'
 import {useState, useRef} from 'react'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import ErrorIcon from '@mui/icons-material/Error'
-import {verifyCaptcha} from './captcha'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 // Function to validate email
@@ -34,8 +33,6 @@ const Contact = ({open, handleClose}) => {
 
     const captchaToken = recaptchaRef.current.getValue() // Get the current value of captcha
     if (!captchaToken) errors.captcha = 'Captcha is required'
-
-    await verifyCaptcha(captchaToken) // Verify captcha
 
     if (Object.keys(errors).length > 0) {
       setState({status: 'inputError', errors})
