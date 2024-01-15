@@ -1,7 +1,7 @@
 {
   "profile": {
     "name": "Bill Zhang",
-    "description": "As an MSCS student at USC, I combine Machine Learning and Full-Stack Web Development, orchestrating a symphony of code. The Developer in me crafts robust applications with tools like React, Vue, and Flask, each project a reflection of my skills. My journey in Machine Learning matures with each Kaggle Competition and innovative project I undertake.",
+    "description": "An MSCS student at USC, blending machine learning with full-stack web development to craft future-ready applications. With a toolkit spanning NextJS, FastAPI, and Google Cloud, I refine my skills through intense hackathons. Explore with me the symphony of code and creativity!",
     "linkedin": "https://www.linkedin.com/in/bill-zhang1",
     "github": "https://github.com/IdkwhatImD0ing/",
     "devpost": "https://devpost.com/IdkwhatImD0ing/"
@@ -209,19 +209,20 @@
       ["JavaScript", "100%"],
       ["Python", "95%"],
       ["C/C++", "90%"],
-      ["Haskell", "80%"],
       ["Java", "70%"],
-      ["Dart", "60%"]
+      ["Dart", "60%"],
+      ["Haskell", "50%"]
     ],
     "frameworks": [
       ["React", "100%"],
       ["NextJs", "90%"],
+      ["FastAPI", "90%"],
       ["Flask", "85%"],
-      ["Express.Js", "80%"],
-      ["Node.Js", "70%"]
+      ["Express.Js", "80%"]
     ],
     "databases": [
       ["Firebase", "100%"],
+      ["Redis", "90%"],
       ["Milvus", "80%"],
       ["PostgreSQL", "70%"],
       ["Pinecone", "20%"]
