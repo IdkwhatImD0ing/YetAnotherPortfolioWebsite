@@ -44,6 +44,46 @@
       "github": "https://github.com/IdkwhatImD0ing/SlugLoop"
     },
     {
+      "name": "GitPT",
+      "description": "GitPT revolutionizes code comprehension by merging GPT-3's AI with a sleek interface, offering an affordable way for students to explore and understand GitHub repositories. This tool parses URLs, summarizes codebases, and displays content with clarity, all within a user-friendly platform that prioritizes learning and efficiency.",
+      "code": "Sxe8s0MH3Qo",
+      "techStack": [
+        "ThreeJS",
+        "NextJS",
+        "TailwindCSS",
+        "OpenAI",
+        "ExpressJS",
+        "MongoDB",
+        "Milvus"
+      ],
+      "link": "https://gitpt.art3m1s.me/",
+      "github": "https://github.com/simon-quach/GitPT"
+    },
+    {
+      "name": "BeSustainable",
+      "description": "BeSustainable merges eco-conscious living with everyday convenience, offering a seamless way to integrate sustainability into daily routines. This intuitive app empowers users to make informed food choices with features like a barcode scanner, OCR technology for ingredient analysis, and a personal sustainability feed, making every meal a step towards a greener future.",
+      "code": "ukji3S3eCow",
+      "techStack": ["NextJS", "Material UI", "MongoDB", "Google OCR", "OpenAI"],
+      "link": "https://besus.art3m1s.me/",
+      "github": "https://github.com/IdkwhatImD0ing/BeSustainable"
+    },
+    {
+      "name": "Counsely",
+      "description": "Counsely is a novel assistant tool offering real-time AI-driven insights and post-session performance evaluations for therapists. It enhances therapeutic sessions with on-the-spot conclusions and suggestions, while its post-session dashboard provides therapists with a deeper understanding of client concerns, facilitating a more effective therapy process.",
+      "code": "Q56mbQdtSnk",
+      "techStack": [
+        "NextJS",
+        "Material UI",
+        "Socket.io",
+        "Firebase",
+        "FastAPI",
+        "OpenAI",
+        "Whisper"
+      ],
+      "link": "https://counsely.art3m1s.me/dashboard",
+      "github": "https://github.com/kaeladair/sbhacks24"
+    },
+    {
       "name": "WebWeaver",
       "description": "WebWeaver is an innovative AI-powered website generation tool that revolutionizes the process of designing and editing websites. Utilizing GPT-Vision, a state-of-the-art multimodal language model, the platform allows for the creation of website drafts based on user inputs, streamlining the design process. It features an advanced code editing interface for users with web development experience, coupled with a user-friendly dashboard for easy management of the entire website creation cycle.",
       "code": "V977Ydky1DI",
@@ -56,7 +96,8 @@
         "Google Cloud",
         "Redis"
       ],
-      "link": "https://www.slugloop.tech/"
+      "link": "https://www.webweaver.biz/",
+      "github": "https://github.com/IdkwhatImD0ing/WebsiteGenerator"
     },
     {
       "name": "Paddy Plant Prognosis",
@@ -79,7 +120,7 @@
       "code": "v5PAwb0BYtw",
       "techStack": [
         "NextJS",
-        "Express",
+        "ExpressJS",
         "TailwindCSS",
         "Material UI",
         "Axios",
@@ -128,7 +169,7 @@
       "name": "Pool Party",
       "description": "Pool Party is a versatile web application that simplifies group travel by connecting users with others headed to the same destination. Optimized for mobile and desktop use, it allows travelers to form or join 'pools' as drivers or passengers, facilitating easy coordination and shared travel costs. With Pool Party, arranging rideshares becomes straightforward, enabling users to select companions based on mutual travel plans, thereby enhancing the journey experience and offering a cost-effective way to travel.",
       "code": "UEInrwiA_r8",
-      "techStack": ["React", "ExpressJs", "Hop.io"],
+      "techStack": ["React", "ExpressJS", "Hop.io"],
       "link": "https://mypoolparty.tech/",
       "github": "https://github.com/IdkwhatImD0ing/PoolParty"
     },
@@ -138,10 +179,10 @@
       "code": "OjV4-Km9sWw",
       "techStack": [
         "React",
-        "ExpressJs",
+        "ExpressJS",
         "Hop.io",
         "Firebase",
-        "Socker.io",
+        "Socket.io",
         "Material UI"
       ],
       "link": "https://fiesta.art3m1s.me/",
@@ -151,7 +192,7 @@
       "name": "Eat Safely",
       "description": "Introducing EatSafely, a web app that uses machine learning to help you identify if your food is spoiled or not, thus reducing the risk of foodborne illness and wasting money. With a custom-trained model and an accuracy of 97%, simply upload a photo of the fruit in question, and EatSafely will give you a clear and accurate assessment of whether or not it is safe to eat. Say goodbye to spoiled fruits and hello to EatSafely.",
       "code": "tr3ylJX1h30",
-      "techStack": ["React", "Flask", "Hop.io", "Socket.Io", "Tensorflow"],
+      "techStack": ["React", "Flask", "Hop.io", "Socket.io", "Tensorflow"],
       "link": "hhttps://eatsafely.art3m1s.me/",
       "github": "https://devpost.com/software/eatsafely"
     },
@@ -159,7 +200,7 @@
       "name": "Penmanship Pro",
       "description": "A way to improve handwriting! This webapp is designed to help you improve your handwriting through a series of interactive exercises and challenges. Whether you're a student looking to ace your exams or an adult looking to tidy up your notes, Penmanship has something for everyone. Our ML model rates your writing, helping you to identify and correct any mistakes. With the app's timed exercise, you'll be able to track your progress and see how you stack up against other users. So why wait? Start improving your handwriting today and see the difference it can make!",
       "code": "tf44b12LaDU",
-      "techStack": ["React", "Flask", "Hop.io", "Socket.Io", "Tensorflow"],
+      "techStack": ["React", "Flask", "Hop.io", "Socket.io", "Tensorflow"],
       "link": "https://kazitasin07.wixsite.com/penmenshipro",
       "github": "https://github.com/Renaud2002/PenmanshipPro-TLE"
     },
@@ -183,7 +224,7 @@
       "name": "Tetris Coop",
       "description": "Tetris Duels is a classic puzzle game that allows players to test their skills and strategy against others. In this game, players can choose to play solo or with family and friends in a competitive multiplayer mode. The goal is to score as many points as possible by strategically placing falling blocks called tetrominoes to form lines without any gaps. As the game progresses, the blocks fall faster and become more difficult to manage, requiring quick thinking and precise movements. With its simple gameplay and endless replay value, Tetris Duels is a fun and addictive game for players of all ages.",
       "code": "y8wPmVJEqlc",
-      "techStack": ["React", "ExpressJs", "Hop.io"],
+      "techStack": ["React", "ExpressJS", "Hop.io"],
       "link": "https://tetris.art3m1s.me/",
       "github": "https://github.com/IdkwhatImD0ing/tetris-coop"
     },
