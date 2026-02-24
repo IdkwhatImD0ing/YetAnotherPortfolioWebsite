@@ -18,7 +18,7 @@
     "@vercel/analytics": "^1.1.1",
     "framer-motion": "^10.16.16",
     "hamburger-react": "^2.5.0",
-    "next": "14.0.4",
+    "next": "14.2.35",
     "node-fetch": "^3.3.2",
     "react": "^18",
     "react-dom": "^18",
